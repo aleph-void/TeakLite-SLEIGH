@@ -1,0 +1,355 @@
+# Hand-computed expectations for the Teak module.  Accumulators are 40 bit (10 hex digits), flags are 0/1.  The words
+# were worked out from the instruction encodings (GBATEK / the decoder table) and the expectations by hand from the
+# semantics in GBATEK; nothing is copied from the module's output.  "asm" guards each encoding against typos.
+defaults SATA 1 CMD 1 CPC 1 CCNTA 1 CREP 1
+
+case mov_imm_positive
+asm mov 0x1234,b0
+code 5E20 1234
+expect b0 1234
+expect Z 0
+expect M 0
+expect E 0
+expect N 0
+end
+
+case mov_imm_negative
+asm mov 0x8000,b0
+code 5E20 8000
+expect b0 FFFFFF8000
+expect M 1
+expect Z 0
+expect E 0
+expect N 0
+end
+
+case add_extension_bit
+asm add 0x1,a0
+code 86C0 0001
+set a0 7FFFFFFF
+expect a0 0080000000
+expect E 1
+expect M 0
+expect Z 0
+expect N 0
+expect C 0
+expect V 0
+end
+
+case add_carry_out
+asm add 0x1,a0
+code 86C0 0001
+set a0 FFFFFFFFFF
+expect a0 0
+expect Z 1
+expect C 1
+expect V 0
+expect N 1
+expect M 0
+expect E 0
+end
+
+case add_overflow
+asm add 0x1,a0
+code 86C0 0001
+set a0 7FFFFFFFFF
+expect a0 8000000000
+expect V 1
+expect VL 1
+expect C 0
+expect M 1
+expect E 1
+expect Z 0
+end
+
+case sub_borrow
+asm sub 0x1,a1
+code 8FC0 0001
+set a1 0
+expect a1 FFFFFFFFFF
+expect C 1
+expect V 0
+expect M 1
+expect Z 0
+expect E 0
+expect N 0
+end
+
+case cmp_equal
+asm cmp 0x5,a0
+code 8CC0 0005
+set a0 5
+expect a0 5
+expect Z 1
+expect N 1
+expect C 0
+expect M 0
+end
+
+case add_saturates_when_enabled
+asm add 0x1,a0
+code 86C0 0001
+set SATA 0
+set a0 7FFFFFFF
+expect a0 7FFFFFFF
+expect LM 1
+expect E 1
+expect M 0
+end
+
+case shl_one
+asm shl a0,always
+code 6720
+set a0 1
+expect a0 2
+expect C 0
+expect V 0
+expect Z 0
+end
+
+case shl_overflow
+asm shl a0,always
+code 6720
+set a0 4000000000
+expect a0 8000000000
+expect V 1
+expect VL 1
+expect C 0
+expect M 1
+expect E 1
+end
+
+case shr_arithmetic
+asm shr a0,always
+code 6700
+set a0 FFFFFFFFFE
+expect a0 FFFFFFFFFF
+expect C 0
+expect M 1
+expect V 0
+end
+
+case shr_logical
+asm shr a0,always
+code 6700
+set S 1
+set a0 8000000000
+expect a0 4000000000
+expect C 0
+expect M 0
+end
+
+case neg_five
+asm neg a0,always
+code 6790
+set a0 5
+expect a0 FFFFFFFFFB
+expect C 1
+expect V 0
+expect M 1
+end
+
+case inc_nine
+asm inc a0,always
+code 67D0
+set a0 9
+expect a0 A
+end
+
+case mpyi_positive
+asm mpyi 0x5
+code 0805
+set y0 3
+expect x0 5
+expect p0 F
+expect P0E 0
+end
+
+case mpyi_negative
+asm mpyi -0x3
+code 08FD
+set y0 2
+expect x0 FFFD
+expect p0 FFFFFFFA
+expect P0E 1
+end
+
+case mac_adds_previous_product
+asm mac [r0],a0
+code 8220
+set r0 100
+set mem:100 7
+set y0 2
+set p0 10
+expect a0 10
+expect x0 7
+expect p0 E
+expect P0E 0
+end
+
+case push_pop_roundtrip
+asm push 0xabcd ; pop r0
+code 5F40 ABCD 5E60
+set sp 200
+expect r0 ABCD
+expect sp 200
+expect mem:1FF ABCD
+end
+
+case call_pushes_return_address
+asm call 0x1100,always
+code 41C0 1100
+code@1100 4580
+set sp 200
+steps 1
+expect pc 1100
+expect sp 1FE
+expect mem:1FE 1002
+expect mem:1FF 0
+end
+
+case call_then_ret
+asm call 0x1100,always
+code 41C0 1100
+code@1100 4580
+set sp 200
+steps 2
+expect pc 1002
+expect sp 200
+end
+
+case br_taken
+asm br 0x1100,eq
+code 4181 1100
+set Z 1
+steps 1
+expect pc 1100
+end
+
+case br_not_taken
+asm br 0x1100,eq
+code 4181 1100
+set Z 0
+steps 1
+expect pc 1002
+end
+
+case brr_forward
+asm brr 0x1003,always
+code 5020
+steps 1
+expect pc 1003
+end
+
+case rep_executes_next_instruction_four_times
+asm rep 0x3 ; inc a0,always
+code 0C03 67D0
+set a0 0
+steps 1
+expect a0 4
+expect repc 0
+expect pc 1002
+end
+
+case bit_set_in_memory
+asm set 0xf0,[page:0x10]
+code E110 00F0
+set PAGE 3
+set mem:310 A
+expect mem:310 FA
+expect Z 0
+expect M 0
+end
+
+case bit_reset_in_memory
+asm rst 0xf,[page:0x10]
+code E310 000F
+set PAGE 3
+set mem:310 FF
+expect mem:310 F0
+expect Z 0
+end
+
+case swap_a0_b0
+asm swap a0,b0
+code 4980
+set a0 1
+set b0 2
+expect a0 2
+expect b0 1
+expect Z 0
+end
+
+case exp_of_one
+asm exp b0
+code 9460
+set b0 1
+expect sv 1E
+end
+
+case shfi_left_four
+asm shfi a0,a1,0x4
+code 9BC4
+set a0 1
+expect a1 10
+expect V 0
+expect C 0
+expect Z 0
+end
+
+case st0_is_composed_from_flags
+asm mov st0,r1
+code 5828
+set Z 1
+set C 1
+expect r1 880
+end
+
+case broken_expectation_must_fail broken
+asm add 0x1,a0
+code 86C0 0001
+set a0 7FFFFFFF
+expect a0 0080000001
+end
+
+case modulo_address_wraps modulo
+asm mov [r0++],b0
+code 98C8
+set mod2 1
+set cfgi 180
+set r0 103
+set mem:103 1234
+expect b0 1234
+expect r0 100
+end
+
+case modulo_address_inside_buffer modulo
+asm mov [r0++],b0
+code 98C8
+set mod2 1
+set cfgi 180
+set r0 102
+set mem:102 4321
+expect b0 4321
+expect r0 103
+end
+
+case bit_reversed_address modulo
+asm mov [r0++],b0
+code 98C8
+set mod2 100
+set r0 1
+set mem:8000 5678
+expect b0 5678
+expect r0 2
+end
+
+case broken_modulo_expectation_must_fail modulo broken
+asm mov [r0++],b0
+code 98C8
+set mod2 1
+set cfgi 180
+set r0 103
+set mem:103 1234
+expect r0 104
+end
