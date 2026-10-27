@@ -1,4 +1,4 @@
-# sleigh specification file for TeakLite
+# sleigh specification file for the Teak / TeakLite II DSP (Nintendo DSi and 3DS DSP)
 
 define endian=little;
 define alignment=2;
@@ -7,8 +7,8 @@ define space CODE    type=ram_space    size=3     wordsize=2        default;
 define space DATA    type=ram_space    size=2     wordsize=2;
 define space register type=register_space size=4;
 
-# 40bit accumulators
-define register offset=0x0 size=5  [ a0 a1 b0 b1 ];
+# 40bit accumulators (a1s, b1s are the context-switch shadows of a1 and b1)
+define register offset=0x0 size=5  [ a0 a1 b0 b1 a1s b1s ];
 define bitrange a0l=a0[0,16]
                 a0h=a0[16,16]
                 a0e=a0[32,8]
@@ -27,790 +27,74 @@ define bitrange a0l=a0[0,16]
 ;
 
 # GPR
-define register offset=0x20 size=2  [ r0 r1 r2 r3 r4 r5 r6 r7 ];
+define register offset=0x40 size=2  [ r0 r1 r2 r3 r4 r5 r6 r7 ];
 
 # 32bit Multiply parms & results
-define register offset=0x40 size=2  [ x0 y0 x1 y1 p0h ];
-define register offset=0x50 size=4  [ p0 p1 ];
+define register offset=0x50 size=2  [ x0 y0 x1 y1 p0h ];
+define register offset=0x60 size=4  [ p0 p1 ];
 
 # Misc
-define register offset=0x60 size=3  [ pc ]; # todo: 18bit pc
-define register offset=0x70 size=2  [ sp sv mixp lc repc dvm vtr0 vtr1 ];
-define register offset=0x80 size=1  [ prpage ];
+define register offset=0x70 size=3  [ pc ];  # 18 bit
+define register offset=0x78 size=2  [ sp sv mixp lc repc dvm vtr0 vtr1 stepi0 stepj0 ];
+define register offset=0x90 size=2  [ prpage ];
+# 16 bit alias that only names the pc in the Register operand
+define register offset=0x98 size=2  [ pc16 ];
 
 # User defined
-define register offset=0x90 size=2  [ ext0 ext1 ext2 ext3 ];
-# todo: shadow
+define register offset=0xa0 size=2  [ ext0 ext1 ext2 ext3 ];
 
-# Control & status
-#  TL
+# Pseudo registers: composed from / decomposed into the flag and mode bytes below when an instruction
+# reads or writes them (see the Compose*/Decompose* macros)
 define register offset=0x100 size=2 [ st0 st1 st2 icr ];
-#  TL II
 define register offset=0x110 size=2 [ stt0 stt1 stt2 mod0 mod1 mod2 mod3 ];
 
-# Address conf
+# Address configuration (real registers: addressing reads their fields)
 define register offset=0x120 size=2 [ ar0 ar1 arp0 arp1 arp2 arp3 ];
-#todo define bitrange ...
+define register offset=0x130 size=2 [ cfgi cfgj ];
+# bank-exchange shadows
+define register offset=0x140 size=2 [ r0b r1b r4b r7b cfgib cfgjb stepi0b stepj0b ];
+define register offset=0x160 size=3 [ bkstart0 bkstart1 bkstart2 bkstart3 bkend0 bkend1 bkend2 bkend3 ];
+define register offset=0x190 size=2 [ bklc0 bklc1 bklc2 bklc3 ];
 
-define register offset=0x130 size=2 [ cfgi cfgj stepi0 stepj0 ];
-#todo define bitrange ...
+# shadows for context switching (cntx_s / cntx_r, interrupts) and bank exchange
+define register offset=0x1a0 size=2 [ ar0b ar1b arp0b arp1b arp2b arp3b mod2s repcs ];
+define register offset=0x1e0 size=1 [ SH_LM SH_VL SH_E SH_C SH_C1 SH_V SH_N SH_M SH_Z SH_R
+                                      SW_PCMHI SW_SAT SW_SATA SW_HWM SW_S SW_PS0 SW_PS1 SW_PAGE SW_STP16 SW_CMD
+                                      SW_IM0 SW_IM1 SW_IM2 SW_IMV SW_EPI SW_EPJ ];
+
+# scratch registers used by the pseudo-register helpers
+define register offset=0x1c0 size=2 [ wb wb2 ];
+define register offset=0x1d0 size=5 [ wacc ];
 
 define register offset=0x200 size=1 [ IU0 IU1               # st2
+                                    IP0 IP1 IP2 IPV         # stt2
                                     ]
 ;
-#todo: Some of these maybe better as context registers
+# Flags and modes, one byte each (better decompilation than bit fields of the 16 bit registers)
 define register offset=0x300 size=1 [ LM VL E C V N M Z C1             # stt0
                                     R P0E P1E                          # stt1
-                                                                       # todo: stt2
                                     SAT SATA HWM S OU0 OU1 PS0 PS1     # mod0
                                     PAGE STP16 CMD EPI EPJ             # mod1
-                                                                       # todo: mod2
                                     IE CPC                             # mod3
+                                    CCNTA CREP IM0 IM1 IM2 IMV
+                                    IC0 IC1 IC2 NIMC OU2 OU3 OU4
+                                    PCMHI BCN LP REP
                                     ]
 ;
 
-# TOKENS
-define token teakop (16)
-# Opcodes
-    op_0000 = (0,0)
-    op_0001 = (0,1)
-    op_0002 = (0,2)
-    op_0003 = (0,3)
-    op_0004 = (0,4)
-    op_0007 = (0,7)
-    op_0009 = (0,9)
-    op_0015 = (0,15)
-    op_0101 = (1,1)
-    op_0104 = (1,4)
-    op_0105 = (1,5)
-    op_0107 = (1,7)
-    op_0109 = (1,9)
-    op_0115 = (1,15)
-    op_0202 = (2,2)
-    op_0203 = (2,3)
-    op_0204 = (2,4)
-    op_0205 = (2,5)
-    op_0207 = (2,7)
-    op_0209 = (2,9)
-    op_0215 = (2,15)
-    op_0303 = (3,3)
-    op_0304 = (3,4)
-    op_0307 = (3,7)
-    op_0309 = (3,9)
-    op_0315 = (3,15)
-    op_0404 = (4,4)
-    op_0405 = (4,5)
-    op_0407 = (4,7)
-    op_0411 = (4,11)
-    op_0415 = (4,15)
-    op_0505 = (5,5)
-    op_0507 = (5,7)
-    op_0508 = (5,8)
-    op_0515 = (5,15)
-    op_0606 = (6,6)
-    op_0607 = (6,7)
-    op_0615 = (6,15)
-    op_0707 = (7,7)
-    op_0708 = (7,8)
-    op_0709 = (7,9)
-    op_0711 = (7,11)
-    op_0715 = (7,15)
-    op_0808 = (8,8)
-    op_0809 = (8,9)
-    op_0810 = (8,10)
-    op_0811 = (8,11)
-    op_0815 = (8,15)
-    op_0909 = (9,9)
-    op_0915 = (9,15)
-    op_1015 = (10,15)
-    op_1115 = (11,15)
-    op_1215 = (12,15)
-    op_1315 = (13,15)
-
-# Operands
-    Ab_0 = (0,1)
-    Ab_10 = (10,11)
-    Ab_11 = (11,12)
-    Ab_2 = (2,3)
-    Ab_3 = (3,4)
-    Ab_4 = (4,5)
-    Ab_5 = (5,6)
-    Ab_6 = (6,7)
-    Ab_7 = (7,8)
-    Ab_8 = (8,9)
-    Abe_0 = (0,1)
-    Abe_1 = (1,2)
-    Abh_2 = (2,3)
-    Abh_4 = (4,5)
-    Abh_8 = (8,9)
-    Abl_0 = (0,1)
-    Abl_10 = (10,11)
-    Abl_3 = (3,4)
-    Ablh_10 = (10,12)
-    Ablh_9 = (9,11)
-    Address18_2_0 = (0,1)
-    Address18_2_4 = (4,5)
-    Address18_2_5 = (5,6)
-    Alb_0 = (0,2)
-    Alb_9 = (9,11)
-    Alm_9 = (9,12)
-    Alu_0 = (0,2)
-    Alu_9 = (9,11)
-    ArArpSttMod_0 = (0,3)
-    ArArpSttMod_8 = (8,11)
-    ArArp_0 = (0,2)
-    ArArp_8 = (8,10)
-    ArRn1_1 = (1,1)
-    ArRn1_3 = (3,3)
-    ArRn1_4 = (4,4)
-    ArRn1_8 = (8,8)
-    ArRn2_0 = (0,1)
-    ArRn2_10 = (10,11)
-    ArRn2_2 = (2,3)
-    ArRn2_3 = (3,4)
-    ArRn2_4 = (4,5)
-    ArRn2_7 = (7,8)
-    ArRn2_8 = (8,9)
-    ArStep1Alt_3 = (3,3)
-    ArStep1_0 = (0,0)
-    ArStep1_2 = (2,2)
-    ArStep1_3 = (3,3)
-    ArStep1_5 = (5,5)
-    ArStep1_6 = (6,6)
-    ArStep2_0 = (0,1)
-    ArStep2_2 = (2,3)
-    ArStep2_5 = (5,6)
-    ArStep2_8 = (8,9)
-    Ar_0 = (0,0)
-    Ar_2 = (2,2)
-    ArpRn1_0 = (0,0)
-    ArpRn1_2 = (2,2)
-    ArpRn1_3 = (3,3)
-    ArpRn1_4 = (4,4)
-    ArpRn1_5 = (5,5)
-    ArpRn1_8 = (8,8)
-    ArpRn1_9 = (9,9)
-    ArpRn2_10 = (10,11)
-    ArpRn2_4 = (4,5)
-    ArpRn2_5 = (5,6)
-    ArpRn2_8 = (8,9)
-    ArpStep1_0 = (0,0)
-    ArpStep1_1 = (1,1)
-    ArpStep1_2 = (2,2)
-    ArpStep1_3 = (3,3)
-    ArpStep1_4 = (4,4)
-    ArpStep1_8 = (8,8)
-    ArpStep1_9 = (9,9)
-    ArpStep2_0 = (0,1)
-    ArpStep2_1 = (1,2)
-    ArpStep2_2 = (2,3)
-    ArpStep2_3 = (3,4)
-    ArpStep2_5 = (5,6)
-    Arp_0 = (0,1)
-    Ax_0 = (0,0)
-    Ax_1 = (1,1)
-    Ax_10 = (10,10)
-    Ax_11 = (11,11)
-    Ax_12 = (12,12)
-    Ax_3 = (3,3)
-    Ax_4 = (4,4)
-    Ax_5 = (5,5)
-    Ax_6 = (6,6)
-    Ax_8 = (8,8)
-    Axh_0 = (0,0)
-    Axh_12 = (12,12)
-    Axh_4 = (4,4)
-    Axh_5 = (5,5)
-    Axh_6 = (6,6)
-    Axh_8 = (8,8)
-    Axh_9 = (9,9)
-    Axl_0 = (0,0)
-    Axl_12 = (12,12)
-    Axl_4 = (4,4)
-    Axl_5 = (5,5)
-    Axl_8 = (8,8)
-    Ax_not12 = (12,12)
-    BankFlags_0 = (0,5)
-    Bx_0 = (0,0)
-    Bx_1 = (1,1)
-    Bx_10 = (10,10)
-    Bx_12 = (12,12)
-    Bx_2 = (2,2)
-    Bx_3 = (3,3)
-    Bx_4 = (4,4)
-    Bx_5 = (5,5)
-    Bx_8 = (8,8)
-    Bxh_0 = (0,0)
-    Bxh_2 = (2,2)
-    Bxh_5 = (5,5)
-    Bxh_8 = (8,8)
-    Bxl_0 = (0,0)
-    CbsCond_0 = (0,0)
-    CbsCond_3 = (3,3)
-    CbsCond_8 = (8,8)
-    Cond_0003 = (0,3)
-    Imm2_0 = (0,1)
-    Imm2_1 = (1,2)
-    Imm4_0 = (0,3)
-    Imm4_8 = (8,11)
-    Imm5_0 = (0,4)
-    Imm5s_0 = (0,4) signed
-    Imm6s_0 = (0,5) signed
-    Imm7s_0 = (0,6) signed
-    Imm8_0 = (0,7)
-    Imm8s_0 = (0,7) signed
-    Imm9_0 = (0,8)
-    MemImm8_0007 = (0,7)
-    MemR7Imm7s_0 = (0,6) signed
-    Moda3_4 = (4,6)
-    Moda4_4 = (4,7)
-    Mul2_9 = (9,10)
-    Mul3_1 = (1,3)
-    Mul3_8 = (8,10)
-    Px_0 = (0,0)
-    Px_1 = (1,1)
-    Px_4 = (4,4)
-    R0123_0 = (0,1)
-    R0123_5 = (5,6)
-    R45_2 = (2,2)
-    Register_0004 = (0,4)
-    Register_0509 = (5,9)
-    RelAddr7_0410 = (4,10) signed
-    RnOld_10 = (10,12)
-    RnOld_9 = (9,11)
-    Rn_0 = (0,2)
-    StepZIDS_0 = (0,1)
-    StepZIDS_3 = (3,4)
-    StepZIDS_5 = (5,6)
-    StepZIDS_7 = (7,8)
-    SttMod_0 = (0,2)
-    SttMod_8 = (8,10)
-    SwapType_0 = (0,3)
-    Unused_0 = (0,0)
-    Unused_1 = (1,1)
-    Unused_10 = (10,10)
-    Unused_2 = (2,2)
-    Unused_5 = (5,5)
-
-    Address16_16 = (0,15)
-    Address18_16_16 = (0,15)
-    Imm16_16 = (0,15)
-    MemImm16_1631 = (0,15)
-    MemR7Imm16_1631 = (0,15)
+# Context: AMOD selects the full model of modulo / bit-reversed addressing and the step modes (language variant
+# "modulo"); the default variant treats every address register as a plain counter.
+define register offset=0x400 size=4 contextreg;
+define context contextreg
+    AMOD = (0,0)
 ;
 
-# VARIABLES
-attach variables [ Ab_0 Ab_10 Ab_11 Ab_2 Ab_3 Ab_4 Ab_5 Ab_6 Ab_7 Ab_8 ] [ b0 b1 a0 a1 ];
-attach variables [ Abe_0 Abe_1 ] [ b0e b1e a0e a1e ];
-attach variables [ Abh_2 Abh_4 Abh_8 ] [ b0h b1h a0h a1h ];
-attach variables [ Abl_0 Abl_10 Abl_3 ] [ b0l b1l a0l a1l ];
-attach variables [ Ablh_10 Ablh_9 ] [ b0l b0h b1l b1h a0l a0h a1l a1h ];
-# attach variables [ Address16_16 ]
-# attach variables [ Address18_16_16 Address18_2_0 Address18_2_4 Address18_2_5 ]
-# attach variables [ Alb_0 Alb_9 ]
-# attach variables [ Alm_9 ]
-# attach variables [ Alu_0 Alu_9 ]
-attach variables [ ArArpSttMod_0 ArArpSttMod_8 ] [ ar0 ar1 arp0 arp1 arp2 arp3 _ _ stt0 stt1 stt2 _ mod0 mod1 mod2 mod3 ];
-attach variables [ ArArp_0 ArArp_8 ] [ ar0 ar1 arp0 arp1 arp2 arp3 _ _ ];
-# attach variables [ ArRn1_1 ArRn1_3 ArRn1_4 ArRn1_8 ]
-# attach variables [ ArRn2_0 ArRn2_10 ArRn2_2 ArRn2_3 ArRn2_4 ArRn2_7 ArRn2_8 ]
-# attach variables [ ArStep1Alt_3 ]
-# attach variables [ ArStep1_0 ArStep1_2 ArStep1_3 ArStep1_5 ArStep1_6 ]
-# attach variables [ ArStep2_0 ArStep2_2 ArStep2_5 ArStep2_8 ]
-attach variables [ Ar_0 Ar_2 ] [ ar0 ar1 ];
-# attach variables [ ArpRn1_0 ArpRn1_2 ArpRn1_3 ArpRn1_4 ArpRn1_5 ArpRn1_8 ArpRn1_9 ]
-# attach variables [ ArpRn2_10 ArpRn2_4 ArpRn2_5 ArpRn2_8 ]
-# attach variables [ ArpStep1_0 ArpStep1_1 ArpStep1_2 ArpStep1_3 ArpStep1_4 ArpStep1_8 ArpStep1_9 ]
-# attach variables [ ArpStep2_0 ArpStep2_1 ArpStep2_2 ArpStep2_3 ArpStep2_5 ]
-attach variables [ Arp_0 ] [ arp0 arp1 arp2 arp3 ];
-attach variables [ Ax_0 Ax_1 Ax_10 Ax_11 Ax_12 Ax_3 Ax_4 Ax_5 Ax_6 Ax_8 ] [ a0 a1 ];
-attach variables [ Ax_not12 ] [ a1 a0 ];
-attach variables [ Axh_0 Axh_12 Axh_4 Axh_5 Axh_6 Axh_8 Axh_9 ] [ a0h a1h ];
-attach variables [ Axl_0 Axl_12 Axl_4 Axl_5 Axl_8 ] [ a0l a1l ];
-# attach variables [ BankFlags_0 ]
-attach variables [ Bx_0 Bx_1 Bx_10 Bx_12 Bx_2 Bx_3 Bx_4 Bx_5 Bx_8 ] [ b0 b1 ];
-attach variables [ Bxh_0 Bxh_2 Bxh_5 Bxh_8 ] [ b0h b1h ];
-attach variables [ Bxl_0 ] [ b0l b1l ];
-# attach variables [ CbsCond_0 CbsCond_3 CbsCond_8 ]
-# attach variables [ Cond_0 ]
-# attach variables [ Imm16_16 ]
-# attach variables [ Imm2_0 Imm2_1 ]
-# attach variables [ Imm4_0 Imm4_8 ]
-# attach variables [ Imm5_0 ]
-# attach variables [ Imm5s_0 ]
-# attach variables [ Imm6s_0 ]
-# attach variables [ Imm7s_0 ]
-# attach variables [ Imm8_0 ]
-# attach variables [ Imm8s_0 ]
-# attach variables [ Imm9_0 ]
-# attach variables [ MemImm16_16 ]
-# attach variables [ MemImm8_0 ]
-# attach variables [ MemR7Imm16_16 ]
-# attach variables [ MemR7Imm7s_0 ]
-# attach variables [ Moda3_4 ]
-# attach variables [ Moda4_4 ]
-# attach variables [ Mul2_9 ]
-# attach variables [ Mul3_1 Mul3_8 ]
-attach variables [ Px_0 Px_1 Px_4 ] [ p0 p1 ];
-attach variables [ R0123_0 R0123_5 ] [ r0 r1 r2 r3 ];
-attach variables [ R45_2 ] [ r4 r5 ];
-attach variables [ Register_0004 Register_0509 ] [ r0 r1 r2 r3 r4 r5 r7 y0
-                                             st0 st1 st2
-                                             _ # p0h
-                                             _ # pc
-                                             sp
-                                             cfgi cfgj
-                                             b0h b1h b0l b1l
-                                             ext0 ext1 ext2 ext3
-                                             _ _ # a0 a1 
-                                             a0l a1l a0h a1h
-                                             lc sv ];
-# attach variables [ RelAddr7_4 ]
-attach variables [ RnOld_10 RnOld_9 ] [ r0 r1 r2 r3 r4 r5 r7 y0 ];
-attach variables [ Rn_0 ] [ r0 r1 r2 r3 r4 r5 r6 r7 ];
-# attach variables [ StepZIDS_0 StepZIDS_3 StepZIDS_5 StepZIDS_7 ]
-attach variables [ SttMod_0 SttMod_8 ] [ stt0 stt1 stt2 _ mod0 mod1 mod2 mod3 ];
+# The tokens, operand tables and instructions are generated by tools/gen_teak.py from the encoding table in
+# tools/teak_insts.json; the macros are written by hand.
+define pcodeop teak_trap;
 
-Register_0: Register_0004    is Register_0004 { export Register_0004; }
-# Placeholders
-Register_0: p0    is p0 & Register_0004=0x0B unimpl
-Register_0: pc    is pc & Register_0004=0x0C unimpl
-Register_0: Ax_0    is Ax_0 & Register_0004=0x18 unimpl
-Register_0: Ax_0    is Ax_0 & Register_0004=0x19 unimpl
+@include "teak_tokens.sinc"
+@include "teak_macros.sinc"
+@include "teak_tables.sinc"
+@include "teak_insts.sinc"
 
-RegisterAx_0: Ax_0    is Ax_0 & Register_0004=0x18 { export Ax_0; }
-RegisterAx_0: Ax_0    is Ax_0 & Register_0004=0x19 { export Ax_0; }
-
-# Abh
-RegisterGetAccAbh_0: Bxh_0    is Bx_0 & Bxh_0 & Register_0004=0x10 { export Bx_0; }
-RegisterGetAccAbh_0: Bxh_0    is Bx_0 & Bxh_0 & Register_0004=0x11 { export Bx_0; }
-RegisterGetAccAbh_0: Axh_0    is Ax_0 & Axh_0 & Register_0004=0x1C { export Ax_0; }
-RegisterGetAccAbh_0: Axh_0    is Ax_0 & Axh_0 & Register_0004=0x1D { export Ax_0; }
-# Abl
-RegisterGetAccAbl_0: Bxl_0    is Bx_0 & Bxl_0 & Register_0004=0x12 { export Bx_0; }
-RegisterGetAccAbl_0: Bxl_0    is Bx_0 & Bxl_0 & Register_0004=0x13 { export Bx_0; }
-RegisterGetAccAbl_0: Axl_0    is Ax_0 & Axl_0 & Register_0004=0x1A { export Ax_0; }
-RegisterGetAccAbl_0: Axl_0    is Ax_0 & Axl_0 & Register_0004=0x1B { export Ax_0; }
-
-GetAccAxl_12: Axl_12    is Ax_12 & Axl_12 { export Ax_12; }
-GetAccAxh_12: Axh_12    is Ax_12 & Axh_12 { export Ax_12; }
-
-RegToBus16_0: Ax_0    is Ax_0 & Register_0004=0x18
-{ 
-    local tmp:2 = Ax_0[0,16];
-    export tmp; 
-}
-RegToBus16_0: Ax_0    is Ax_0 & Register_0004=0x19
-{ 
-    local tmp:2 = Ax_0[0,16];
-    export tmp; 
-}
-
-RegToBus16Sat_0: Axl_0    is Ax_0 & Axl_0 & Register_0004=0x1A
-{ 
-    local tmp:2 = Axl_0;
-    LM = LM || (SAT == 0 && Ax_0 == sext(Ax_0[0,32]));
-    # todo: consider using pcodeop, currently produces shitty decomp
-    # if (SAT == 1 || Ax_0 == sext(Ax_0[0,32])) goto <end>;
-    # # !regs.sat && value != SignExtend<32>(value)
-    #     tmp = ~sext(Ax_0[39,1]);
-    # <end>
-    export tmp;
-}
-RegToBus16Sat_0: Axl_0    is Ax_0 & Axl_0 & Register_0004=0x1B
-{ 
-    local tmp:2 = Axl_0;
-    LM = LM || (SAT == 0 && Ax_0 == sext(Ax_0[0,32]));
-    # todo: consider using pcodeop, currently produces shitty decomp
-    # if (SAT == 1 || Ax_0 == sext(Ax_0[0,32])) goto <end>;
-    # # !regs.sat && value != SignExtend<32>(value)
-    #     tmp = ~sext(Ax_0[39,1]);
-    # <end>
-    export tmp;
-}
-RegToBus16Sat_0: Bxl_0    is Bx_0 & Bxl_0 & Register_0004=0x12
-{ 
-    local tmp:2 = Bxl_0;
-    LM = LM || (SAT == 0 && Bx_0 == sext(Bx_0[0,32]));
-    # todo: consider using pcodeop, currently produces shitty decomp
-    # if (SAT == 1 || Bx_0 == sext(Bx_0[0,32])) goto <end>;
-    # # !regs.sat && value != SignExtend<32>(value)
-    #     tmp = ~sext(Bx_0[39,1]);
-    # <end>
-    export tmp;
-}
-RegToBus16Sat_0: Bxl_0    is Bx_0 & Bxl_0 & Register_0004=0x13
-{ 
-    local tmp:2 = Bxl_0;
-    LM = LM || (SAT == 0 && Bx_0 == sext(Bx_0[0,32]));
-    # todo: consider using pcodeop, currently produces shitty decomp
-    # if (SAT == 1 || Bx_0 == sext(Bx_0[0,32])) goto <end>;
-    # # !regs.sat && value != SignExtend<32>(value)
-    #     tmp = ~sext(Bx_0[39,1]);
-    # <end>
-    export tmp;
-}
-RegToBus16Sat_0: Axh_0    is Ax_0 & Axh_0 & Register_0004=0x1C {
-  local tmp:2 = Axh_0;
-  # todo: consider using pcodeop, currently produces shitty decomp
-  # if (SAT == 1 || Ax_0 == sext(Ax_0[0,32])) goto <end>;
-  #   # !regs.sat && value != SignExtend<32>(value)
-  #     LM = 1;
-  #     tmp = ~sext(Ax_0[39,1]);
-  #     tmp[15,1] = Ax_0[39,1];
-  # <end>
-  export tmp; 
-}
-RegToBus16Sat_0: Axh_0    is Ax_0 & Axh_0 & Register_0004=0x1D {
-  local tmp:2 = Axh_0;
-  # todo: consider using pcodeop, currently produces shitty decomp
-  # if (SAT == 1 || Ax_0 == sext(Ax_0[0,32])) goto <end>;
-  #   # !regs.sat && value != SignExtend<32>(value)
-  #     LM = 1;
-  #     tmp = ~sext(Ax_0[39,1]);
-  #     tmp[15,1] = Ax_0[39,1];
-  # <end>
-  export tmp; 
-}
-# todo: figure out why these dont work unless explicitly specified...
-RegToBus16Sat_0: Register_0004    is Register_0004 & Register_0004=0x1E { export Register_0004; }
-RegToBus16Sat_0: Register_0004    is Register_0004 & Register_0004=0x1F { export Register_0004; }
-
-Register_5: Register_0509    is Register_0509 { export Register_0509; }
-# Placeholders
-Register_5: p0    is p0 & Register_0509=0x0B unimpl
-Register_5: pc    is pc & Register_0509=0x0C unimpl
-Register_5: Ax_5    is Ax_5 & (Register_0509=0x18 | Register_0509=0x19) unimpl
-
-RegToBus16SatAblh_9: Ablh_9   is Ablh_9 
-{
-    # todo: saturate
-    export Ablh_9;
-}
-RegToBus16SatAbl_10: Abl_10   is Abl_10 
-{
-    # todo: saturate
-    export Abl_10;
-}
-RegToBus16SatAbl_0: Abl_0   is Abl_0 
-{
-    # todo: saturate
-    export Abl_0;
-}
-
-RegToBus16SatAxl_8: Axl_8    is Axl_8 
-{
-    # todo: saturate
-    export Axl_8;
-}
-
-Address18_16and0: Address18    is Address18_2_0 ; Address18_16_16
-  [ Address18 = ((Address18_2_0<<16) | (Address18_16_16)); ]
-{
-  # don't export as an address, may be PIC code, and would add spurious symbols.
-  export *[CODE]:4 Address18;
-}
-
-Address18_16and4: Address18    is Address18_2_4 ; Address18_16_16
-  [ Address18 = ((Address18_2_4<<16) | (Address18_16_16)); ]
-{
-  # don't export as an address, may be PIC code, and would add spurious symbols.
-  export *[CODE]:4 Address18;
-}
-
-Address18_16and5: Address18    is Address18_2_5 ; Address18_16_16
-  [ Address18 = ((Address18_2_5<<16) | (Address18_16_16)); ]
-{
-  # don't export as an address, may be PIC code, and would add spurious symbols.
-  export *[CODE]:4 Address18;
-}
-
-RelAddr7_4: reloc is RelAddr7_0410
-    [ reloc = inst_start + RelAddr7_0410 + 1; ]
-{
-    export *[CODE]:4 reloc;
-}
-
-MemImm8_0: [PAGE:MemImm8_0007] is PAGE & MemImm8_0007
-{
-    local reloc:2 = (zext(PAGE) << 8) + zext(MemImm8_0007:1);
-    export *[DATA]:2 reloc;
-}
-
-MemImm16_16: [MemImm16_1631] is MemImm16_1631
-{
-    export *[DATA]:2 MemImm16_1631;
-}
-
-MemR7Imm16_16: [r7,MemR7Imm16_1631] is r7 & MemR7Imm16_1631
-{
-    local reloc:2 = zext(r7) + zext(MemR7Imm16_1631:2);
-    export *[DATA]:2 reloc;
-}
-
-# Rn_0 seems to always be followed by StepZIDS_3 (sane encoding?!)
-RnAndModify_0: Rn_0 is Rn_0 & StepZIDS_3=0x0
-{
-    export Rn_0;
-}
-RnAndModify_0: Rn_0,0x1 is Rn_0 & StepZIDS_3=0x1
-{
-    local tmp:2 = Rn_0;
-    Rn_0 = Rn_0 + 1;
-    export tmp;
-}
-RnAndModify_0: Rn_0,-0x1 is Rn_0 & StepZIDS_3=0x2
-{
-    local tmp:2 = Rn_0;
-    Rn_0 = Rn_0 - 1;
-    export tmp;
-}
-RnAddressAndModify_0: [RnAndModify_0]    is RnAndModify_0
-{
-    export *[DATA]:2 RnAndModify_0;
-}
-
-ProductToBus40p0: p0    is p0
-{
-    # todo: PS0 state
-    local tmp:5 = zext(p0) | sext(P0E << 32);
-    export tmp;
-}
-ProductToBus40p1: p1    is p1
-{
-    # todo: PS1 state
-    local tmp:5 = zext(p1) | sext(P1E << 32);
-    export tmp;
-}
-ProductToBus40_1: ProductToBus40p0 is ProductToBus40p0 & Px_1=0x0
-{
-    export ProductToBus40p0;
-}
-ProductToBus40_1: ProductToBus40p1 is ProductToBus40p1 & Px_1=0x1
-{
-    export ProductToBus40p1;
-}
-
-Cond_0: ""       is Cond_0003=0x0 { local tmp:1 = (1); export tmp; } # Always
-Cond_0: "eq"     is Cond_0003=0x1 { local tmp:1 = (Z==1); export tmp; } # Equal to zero
-Cond_0: "neq"    is Cond_0003=0x2 { local tmp:1 = (Z==0); export tmp; } # Not equal to zero
-Cond_0: "gt"     is Cond_0003=0x3 { local tmp:1 = (M==0 && Z==0); export tmp; } # Greater than zero
-Cond_0: "ge"     is Cond_0003=0x4 { local tmp:1 = (M==0); export tmp; } # Greater or equal to zero
-Cond_0: "lt"     is Cond_0003=0x5 { local tmp:1 = (M==1); export tmp; } # Less than zero
-Cond_0: "le"     is Cond_0003=0x6 { local tmp:1 = (M==1 || Z==1); export tmp; } # Less or equal to zero
-Cond_0: "nn"     is Cond_0003=0x7 { local tmp:1 = (N==0); export tmp; } # Normalize flag is cleared
-Cond_0: "c"      is Cond_0003=0x8 { local tmp:1 = (C==1); export tmp; } # Carry flag is set
-Cond_0: "v"      is Cond_0003=0x9 { local tmp:1 = (V==1); export tmp; } # Overflow flag is set
-Cond_0: "e"      is Cond_0003=0xA { local tmp:1 = (E==1); export tmp; } # Extension flag is set
-Cond_0: "l"      is Cond_0003=0xB { local tmp:1 = (LM==1); export tmp; } # Limit flag is set
-Cond_0: "nr"     is Cond_0003=0xC { local tmp:1 = (R==0); export tmp; } # R flag is cleared
-Cond_0: "niu0"   is Cond_0003=0xD { local tmp:1 = (IU0==0); export tmp; } # Input user pin 0 cleared
-Cond_0: "iu0"    is Cond_0003=0xE { local tmp:1 = (IU0==1); export tmp; } # Input user pin 0 set
-Cond_0: "iu1"    is Cond_0003=0xF { local tmp:1 = (IU1==1); export tmp; } # Input user pin 1 set
-
-# PCODEOPs
-define pcodeop debug_trap;
-
-# MACROs
-macro Push(value)
-{
-    tmp:2 = value; # assert(sizeof(value) == 2)
-    sp = sp - 1;
-    *[DATA]:2 sp = tmp;
-}
-
-macro Pop(value)
-{
-    tmp:2 = value; # assert(sizeof(value) == 2)
-
-    tmp = *[DATA]:2 sp;
-    sp = sp + 1;
-
-    value = tmp;
-}
-
-macro PushPC()
-{
-    l:2 = inst_next & 0xFFFF;
-    h:2 = inst_next >> 16;
-
-    # todo: this is left unimplemented to avoid complex decomp
-    # if (CPC  == 0) goto <cpc0>;
-    # # (CPC  == 1)
-    # Push(h);
-    # Push(l);
-    # goto <end>;
-    # <cpc0>
-    # (CPC  == 0)
-    Push(l);
-    Push(h);
-    # <end>
-}
-macro PopPC()
-{
-    l:2 = 0;
-    h:2 = 0;
-
-    # todo: this is left unimplemented to avoid complex decomp
-    # if (CPC  == 0) goto <cpc0>;
-    # # (CPC  == 1)
-    # Pop(l);
-    # Pop(h);
-    # goto <end>;
-    # <cpc0>
-    # (CPC  == 0)
-    Pop(h);
-    Pop(l);
-    # <end>
-    pc = zext(h) << 16 | zext(l);
-}
-macro SetAccFlag(Ab)
-{
-    tmp:5 = Ab; # assert(sizeof(Ab) == 5)
-
-    Z = Ab == 0;
-    M = (Ab[39,1]) != 0;
-    E = Ab != sext(Ab[0,32]);
-    local bit31 = Ab[31,1];
-    local bit30 = Ab[30,1];
-    N = Z || (!E && (bit31 ^ bit30) != 0);
-}
-
-macro SetAcc(Ab, value)
-{
-    tmp:5 = value; # assert(sizeof(value) == 5)
-
-    Ab = tmp;
-}
-
-macro SatAndSetAccAndFlag(Ab, value)
-{
-    tmp:5 = value; # assert(sizeof(value) == 5)
-
-    SetAccFlag(value);
-    #todo: if (!regs.sata) { ... }
-    SetAcc(Ab, value);
-}
-
-macro SetAccAndFlag(Ab, value) 
-{
-    SetAccFlag(value);
-    SetAcc(Ab, value);
-}
-
-macro RegFromBus16Ab(Ab, value)
-{
-    tmp:5 = Ab; # assert(sizeof(Ab) == 5)
-}
-
-macro StepAddress(unit, address, step, dmod)
-{
-    #todo
-}
-
-macro ProductToBus40(Px, ret)
-{
-    index:4 = &Px - &p0;
-    PxE = *[register]:4 (&P0E + index);
-    tmp:5 = sext(PxE[0,1]);
-
-    ret = tmp & zext(Px);
-}
-
-macro ProductFromBus32(Px, value)
-{
-    index:4 = &Px - &p0;
-    PxE:4 = &P0E + index;
-    Px = value;
-    *[register]:4 PxE = value[31,1];
-}
-
-macro DoMultiplication(Px, PxE, in_x, in_y, in_x_sign, in_y_sign)
-{
-    # if (regs.hwm == 1 || (regs.hwm == 3 && unit == 0)) {
-    #     y >>= 8;
-    # } else if (regs.hwm == 2 || (regs.hwm == 3 && unit == 1)) {
-    #     y &= 0xFF;
-    # }
-
-    x:4 = 0;
-    y:4 = 0;
-    x_sign:1 = in_x_sign;
-    y_sign:1 = in_y_sign;
-    if(x_sign) goto <xsign>;
-      x = zext(in_x);
-      goto <xsign_end>;
-    <xsign>
-      x = sext(in_x);
-    <xsign_end>
-
-    if(y_sign) goto <ysign>;
-      y = zext(in_y);
-      goto <ysign_end>;
-    <ysign>
-      y = sext(in_y);
-    <ysign_end>
-
-    Px = x * y;
-    PxE = (x_sign || y_sign) && Px[31,1];
-}
-
-macro DoMultiplication_unit0(x_sign, y_sign)
-{
-    DoMultiplication(p0, P0E, x0, y0, x_sign, y_sign);
-}
-macro DoMultiplication_unit1(x_sign, y_sign)
-{
-    DoMultiplication(p1, P1E, x1, y1, x_sign, y_sign);
-}
-
-macro ShiftBus40Left(value, sv, Ab)
-{
-    tmp:5 = Ab; # assert(sizeof(Ab) == 5)
-
-    V = value != 0 && S == 0;
-    VL = VL || V;
-    Ab = value << sv;
-    C = Ab[39,1] != 0;
-    SetAccFlag(Ab);
-    LM = LM || ((S == 0) && (SATA == 0) && (V || Ab != sext(Ab[0,32])));
-    # todo: saturate;
-}
-
-macro ShiftBus40Right(value, nsv, Ab)
-{
-    tmp:5 = Ab; # assert(sizeof(Ab) == 5)
-
-    C = ((value >> nsv - 1) & 1) != 0;
-    Ab = value >> nsv;
-    if(S==1) goto <end>;
-        # Arithamatic shift
-        Ab = value s>> nsv;
-    <end>
-    V = V && S;
-
-    SetAccFlag(Ab);
-    LM = LM || ((S == 0) && (SATA == 0) && (V || Ab != sext(Ab[0,32])));
-}
-
-macro Add(a, b) 
-{
-    value:5 = a;
-    C = carry(value, b);
-    V = scarry(value, b);
-    VL = VL || V;
-    b = value + b;
-}
-macro Sub(a, b) 
-{
-    value:5 = a;
-    C = carry(value, -b);
-    V = sborrow(value, b);
-    VL = VL || V;
-    b = value - b;
-}
-
-@include "teak.sinc"
-@include "alb.sinc"
-@include "alm_alu.sinc"
-@include "moda.sinc"

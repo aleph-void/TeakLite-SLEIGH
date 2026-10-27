@@ -1,2 +1,8 @@
 ﻿*.cdc
 *.sla
+lib/
+build/
+dist/
+*.jar
+*.lock
+__pycache__/

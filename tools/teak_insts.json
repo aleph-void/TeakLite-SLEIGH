@@ -1,0 +1,11588 @@
+[
+{
+"name": "nop",
+"opcode": 0,
+"ops": [],
+"except": []
+},
+{
+"name": "norm",
+"opcode": 38080,
+"ops": [
+[
+"At",
+"Ax",
+8
+],
+[
+"At",
+"Rn",
+0
+],
+[
+"At",
+"StepZIDS",
+3
+]
+],
+"except": []
+},
+{
+"name": "swap",
+"opcode": 18816,
+"ops": [
+[
+"At",
+"SwapType",
+0
+]
+],
+"except": []
+},
+{
+"name": "trap",
+"opcode": 32,
+"ops": [],
+"except": []
+},
+{
+"name": "alm",
+"opcode": 40960,
+"ops": [
+[
+"At",
+"Alm",
+9
+],
+[
+"At",
+"MemImm8",
+0
+],
+[
+"At",
+"Ax",
+8
+]
+],
+"except": []
+},
+{
+"name": "alm",
+"opcode": 32896,
+"ops": [
+[
+"At",
+"Alm",
+9
+],
+[
+"At",
+"Rn",
+0
+],
+[
+"At",
+"StepZIDS",
+3
+],
+[
+"At",
+"Ax",
+8
+]
+],
+"except": []
+},
+{
+"name": "alm",
+"opcode": 32928,
+"ops": [
+[
+"At",
+"Alm",
+9
+],
+[
+"At",
+"Register",
+0
+],
+[
+"At",
+"Ax",
+8
+]
+],
+"except": []
+},
+{
+"name": "alm_r6",
+"opcode": 54152,
+"ops": [
+[
+"Const",
+"Alm",
+0
+],
+[
+"At",
+"Ax",
+4
+]
+],
+"except": []
+},
+{
+"name": "alm_r6",
+"opcode": 54153,
+"ops": [
+[
+"Const",
+"Alm",
+1
+],
+[
+"At",
+"Ax",
+4
+]
+],
+"except": []
+},
+{
+"name": "alm_r6",
+"opcode": 54154,
+"ops": [
+[
+"Const",
+"Alm",
+2
+],
+[
+"At",
+"Ax",
+4
+]
+],
+"except": []
+},
+{
+"name": "alm_r6",
+"opcode": 54155,
+"ops": [
+[
+"Const",
+"Alm",
+3
+],
+[
+"At",
+"Ax",
+4
+]
+],
+"except": []
+},
+{
+"name": "alm_r6",
+"opcode": 54156,
+"ops": [
+[
+"Const",
+"Alm",
+4
+],
+[
+"At",
+"Ax",
+4
+]
+],
+"except": []
+},
+{
+"name": "alm_r6",
+"opcode": 54157,
+"ops": [
+[
+"Const",
+"Alm",
+5
+],
+[
+"At",
+"Ax",
+4
+]
+],
+"except": []
+},
+{
+"name": "alm_r6",
+"opcode": 54158,
+"ops": [
+[
+"Const",
+"Alm",
+6
+],
+[
+"At",
+"Ax",
+4
+]
+],
+"except": []
+},
+{
+"name": "alm_r6",
+"opcode": 54159,
+"ops": [
+[
+"Const",
+"Alm",
+7
+],
+[
+"At",
+"Ax",
+4
+]
+],
+"except": []
+},
+{
+"name": "alm_r6",
+"opcode": 37986,
+"ops": [
+[
+"Const",
+"Alm",
+8
+],
+[
+"At",
+"Ax",
+0
+]
+],
+"except": []
+},
+{
+"name": "alm_r6",
+"opcode": 37988,
+"ops": [
+[
+"Const",
+"Alm",
+9
+],
+[
+"At",
+"Ax",
+0
+]
+],
+"except": []
+},
+{
+"name": "alm_r6",
+"opcode": 37990,
+"ops": [
+[
+"Const",
+"Alm",
+10
+],
+[
+"At",
+"Ax",
+0
+]
+],
+"except": []
+},
+{
+"name": "alm_r6",
+"opcode": 24099,
+"ops": [
+[
+"Const",
+"Alm",
+11
+],
+[
+"At",
+"Ax",
+8
+]
+],
+"except": []
+},
+{
+"name": "alm_r6",
+"opcode": 24098,
+"ops": [
+[
+"Const",
+"Alm",
+12
+],
+[
+"At",
+"Ax",
+8
+]
+],
+"except": []
+},
+{
+"name": "alm_r6",
+"opcode": 24385,
+"ops": [
+[
+"Const",
+"Alm",
+13
+],
+[
+"Const",
+"Ax",
+0
+]
+],
+"except": []
+},
+{
+"name": "alm_r6",
+"opcode": 36962,
+"ops": [
+[
+"Const",
+"Alm",
+14
+],
+[
+"At",
+"Ax",
+8
+],
+[
+"Unused",
+0
+]
+],
+"except": []
+},
+{
+"name": "alm_r6",
+"opcode": 35427,
+"ops": [
+[
+"Const",
+"Alm",
+15
+],
+[
+"At",
+"Ax",
+3
+]
+],
+"except": []
+},
+{
+"name": "alu",
+"opcode": 54520,
+"ops": [
+[
+"At",
+"Alu",
+0
+],
+[
+"At",
+"MemImm16",
+16
+],
+[
+"At",
+"Ax",
+8
+]
+],
+"except": [
+[
+"Alu",
+0,
+4
+],
+[
+"Alu",
+0,
+5
+]
+]
+},
+{
+"name": "alu",
+"opcode": 54488,
+"ops": [
+[
+"At",
+"Alu",
+0
+],
+[
+"At",
+"MemR7Imm16",
+16
+],
+[
+"At",
+"Ax",
+8
+]
+],
+"except": [
+[
+"Alu",
+0,
+4
+],
+[
+"Alu",
+0,
+5
+]
+]
+},
+{
+"name": "alu",
+"opcode": 32960,
+"ops": [
+[
+"At",
+"Alu",
+9
+],
+[
+"At",
+"Imm16",
+16
+],
+[
+"At",
+"Ax",
+8
+]
+],
+"except": [
+[
+"Alu",
+9,
+4
+],
+[
+"Alu",
+9,
+5
+]
+]
+},
+{
+"name": "alu",
+"opcode": 49152,
+"ops": [
+[
+"At",
+"Alu",
+9
+],
+[
+"At",
+"Imm8",
+0
+],
+[
+"At",
+"Ax",
+8
+]
+],
+"except": [
+[
+"Alu",
+9,
+4
+],
+[
+"Alu",
+9,
+5
+]
+]
+},
+{
+"name": "alu",
+"opcode": 16384,
+"ops": [
+[
+"At",
+"Alu",
+9
+],
+[
+"At",
+"MemR7Imm7s",
+0
+],
+[
+"At",
+"Ax",
+8
+]
+],
+"except": [
+[
+"Alu",
+9,
+4
+],
+[
+"Alu",
+9,
+5
+]
+]
+},
+{
+"name": "or_",
+"opcode": 53905,
+"ops": [
+[
+"At",
+"Ab",
+10
+],
+[
+"At",
+"Ax",
+6
+],
+[
+"At",
+"Ax",
+5
+]
+],
+"except": []
+},
+{
+"name": "or_",
+"opcode": 54436,
+"ops": [
+[
+"At",
+"Ax",
+8
+],
+[
+"At",
+"Bx",
+1
+],
+[
+"At",
+"Ax",
+0
+]
+],
+"except": []
+},
+{
+"name": "or_",
+"opcode": 54212,
+"ops": [
+[
+"At",
+"Bx",
+10
+],
+[
+"At",
+"Bx",
+1
+],
+[
+"At",
+"Ax",
+0
+]
+],
+"except": []
+},
+{
+"name": "alb",
+"opcode": 57600,
+"ops": [
+[
+"At",
+"Alb",
+9
+],
+[
+"At",
+"Imm16",
+16
+],
+[
+"At",
+"MemImm8",
+0
+]
+],
+"except": []
+},
+{
+"name": "alb",
+"opcode": 32992,
+"ops": [
+[
+"At",
+"Alb",
+9
+],
+[
+"At",
+"Imm16",
+16
+],
+[
+"At",
+"Rn",
+0
+],
+[
+"At",
+"StepZIDS",
+3
+]
+],
+"except": []
+},
+{
+"name": "alb",
+"opcode": 33248,
+"ops": [
+[
+"At",
+"Alb",
+9
+],
+[
+"At",
+"Imm16",
+16
+],
+[
+"At",
+"Register",
+0
+]
+],
+"except": []
+},
+{
+"name": "alb_r6",
+"opcode": 18360,
+"ops": [
+[
+"At",
+"Alb",
+0
+],
+[
+"At",
+"Imm16",
+16
+]
+],
+"except": []
+},
+{
+"name": "alb",
+"opcode": 17352,
+"ops": [
+[
+"Const",
+"Alb",
+0
+],
+[
+"At",
+"Imm16",
+16
+],
+[
+"At",
+"SttMod",
+0
+]
+],
+"except": []
+},
+{
+"name": "alb",
+"opcode": 17288,
+"ops": [
+[
+"Const",
+"Alb",
+1
+],
+[
+"At",
+"Imm16",
+16
+],
+[
+"At",
+"SttMod",
+0
+]
+],
+"except": []
+},
+{
+"name": "alb",
+"opcode": 56,
+"ops": [
+[
+"Const",
+"Alb",
+2
+],
+[
+"At",
+"Imm16",
+16
+],
+[
+"At",
+"SttMod",
+0
+]
+],
+"except": []
+},
+{
+"name": "alb",
+"opcode": 38000,
+"ops": [
+[
+"Const",
+"Alb",
+4
+],
+[
+"At",
+"Imm16",
+16
+],
+[
+"At",
+"SttMod",
+0
+]
+],
+"except": []
+},
+{
+"name": "alb",
+"opcode": 38008,
+"ops": [
+[
+"Const",
+"Alb",
+5
+],
+[
+"At",
+"Imm16",
+16
+],
+[
+"At",
+"SttMod",
+0
+]
+],
+"except": []
+},
+{
+"name": "add",
+"opcode": 53978,
+"ops": [
+[
+"At",
+"Ab",
+10
+],
+[
+"At",
+"Bx",
+0
+]
+],
+"except": []
+},
+{
+"name": "add",
+"opcode": 24048,
+"ops": [
+[
+"At",
+"Bx",
+1
+],
+[
+"At",
+"Ax",
+0
+]
+],
+"except": []
+},
+{
+"name": "add_p1",
+"opcode": 55170,
+"ops": [
+[
+"At",
+"Ax",
+0
+]
+],
+"except": []
+},
+{
+"name": "add",
+"opcode": 24056,
+"ops": [
+[
+"At",
+"Px",
+1
+],
+[
+"At",
+"Bx",
+0
+]
+],
+"except": []
+},
+{
+"name": "sub",
+"opcode": 35425,
+"ops": [
+[
+"At",
+"Ab",
+3
+],
+[
+"At",
+"Bx",
+8
+]
+],
+"except": []
+},
+{
+"name": "sub",
+"opcode": 34913,
+"ops": [
+[
+"At",
+"Bx",
+4
+],
+[
+"At",
+"Ax",
+3
+]
+],
+"except": []
+},
+{
+"name": "sub_p1",
+"opcode": 54457,
+"ops": [
+[
+"At",
+"Ax",
+8
+]
+],
+"except": []
+},
+{
+"name": "sub",
+"opcode": 36816,
+"ops": [
+[
+"At",
+"Px",
+1
+],
+[
+"At",
+"Bx",
+0
+]
+],
+"except": []
+},
+{
+"name": "app",
+"opcode": 24000,
+"ops": [
+[
+"At",
+"Ab",
+2
+],
+[
+"Cn",
+"BZr"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "app",
+"opcode": 24001,
+"ops": [
+[
+"At",
+"Ab",
+2
+],
+[
+"Cn",
+"BZr"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PA"
+]
+],
+"except": []
+},
+{
+"name": "app",
+"opcode": 17808,
+"ops": [
+[
+"At",
+"Ab",
+2
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "app",
+"opcode": 17810,
+"ops": [
+[
+"At",
+"Ab",
+2
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PA"
+]
+],
+"except": []
+},
+{
+"name": "app",
+"opcode": 17811,
+"ops": [
+[
+"At",
+"Ab",
+2
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PA"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PA"
+]
+],
+"except": []
+},
+{
+"name": "app",
+"opcode": 24002,
+"ops": [
+[
+"At",
+"Ab",
+2
+],
+[
+"Cn",
+"BZr"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "app",
+"opcode": 24003,
+"ops": [
+[
+"At",
+"Ab",
+2
+],
+[
+"Cn",
+"BZr"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PA"
+]
+],
+"except": []
+},
+{
+"name": "app",
+"opcode": 32966,
+"ops": [
+[
+"At",
+"Ab",
+10
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "app",
+"opcode": 33478,
+"ops": [
+[
+"At",
+"Ab",
+10
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PA"
+]
+],
+"except": []
+},
+{
+"name": "app",
+"opcode": 33734,
+"ops": [
+[
+"At",
+"Ab",
+10
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PA"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PA"
+]
+],
+"except": []
+},
+{
+"name": "app",
+"opcode": 36972,
+"ops": [
+[
+"At",
+"Ab",
+0
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "app",
+"opcode": 18882,
+"ops": [
+[
+"At",
+"Ab",
+4
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "app",
+"opcode": 37228,
+"ops": [
+[
+"At",
+"Ab",
+0
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PA"
+]
+],
+"except": []
+},
+{
+"name": "app",
+"opcode": 18883,
+"ops": [
+[
+"At",
+"Ab",
+4
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PA"
+]
+],
+"except": []
+},
+{
+"name": "add_add",
+"opcode": 28544,
+"ops": [
+[
+"At",
+"ArpRn1",
+2
+],
+[
+"At",
+"ArpStep1",
+0
+],
+[
+"At",
+"ArpStep1",
+1
+],
+[
+"At",
+"Ab",
+3
+]
+],
+"except": []
+},
+{
+"name": "add_sub",
+"opcode": 28576,
+"ops": [
+[
+"At",
+"ArpRn1",
+2
+],
+[
+"At",
+"ArpStep1",
+0
+],
+[
+"At",
+"ArpStep1",
+1
+],
+[
+"At",
+"Ab",
+3
+]
+],
+"except": []
+},
+{
+"name": "sub_add",
+"opcode": 28608,
+"ops": [
+[
+"At",
+"ArpRn1",
+2
+],
+[
+"At",
+"ArpStep1",
+0
+],
+[
+"At",
+"ArpStep1",
+1
+],
+[
+"At",
+"Ab",
+3
+]
+],
+"except": []
+},
+{
+"name": "sub_sub",
+"opcode": 28640,
+"ops": [
+[
+"At",
+"ArpRn1",
+2
+],
+[
+"At",
+"ArpStep1",
+0
+],
+[
+"At",
+"ArpStep1",
+1
+],
+[
+"At",
+"Ab",
+3
+]
+],
+"except": []
+},
+{
+"name": "add_sub_sv",
+"opcode": 23984,
+"ops": [
+[
+"At",
+"ArRn1",
+1
+],
+[
+"At",
+"ArStep1",
+0
+],
+[
+"At",
+"Ab",
+2
+]
+],
+"except": []
+},
+{
+"name": "sub_add_sv",
+"opcode": 24032,
+"ops": [
+[
+"At",
+"ArRn1",
+1
+],
+[
+"At",
+"ArStep1",
+0
+],
+[
+"At",
+"Ab",
+2
+]
+],
+"except": []
+},
+{
+"name": "sub_add_i_mov_j_sv",
+"opcode": 32868,
+"ops": [
+[
+"At",
+"ArpRn1",
+8
+],
+[
+"At",
+"ArpStep1",
+0
+],
+[
+"At",
+"ArpStep1",
+1
+],
+[
+"At",
+"Ab",
+3
+]
+],
+"except": []
+},
+{
+"name": "sub_add_j_mov_i_sv",
+"opcode": 23936,
+"ops": [
+[
+"At",
+"ArpRn1",
+2
+],
+[
+"At",
+"ArpStep1",
+0
+],
+[
+"At",
+"ArpStep1",
+1
+],
+[
+"At",
+"Ab",
+3
+]
+],
+"except": []
+},
+{
+"name": "add_sub_i_mov_j",
+"opcode": 36976,
+"ops": [
+[
+"At",
+"ArpRn1",
+8
+],
+[
+"At",
+"ArpStep1",
+0
+],
+[
+"At",
+"ArpStep1",
+1
+],
+[
+"At",
+"Ab",
+2
+]
+],
+"except": []
+},
+{
+"name": "add_sub_j_mov_i",
+"opcode": 24112,
+"ops": [
+[
+"At",
+"ArpRn1",
+8
+],
+[
+"At",
+"ArpStep1",
+0
+],
+[
+"At",
+"ArpStep1",
+1
+],
+[
+"At",
+"Ab",
+2
+]
+],
+"except": []
+},
+{
+"name": "mul",
+"opcode": 32768,
+"ops": [
+[
+"At",
+"Mul3",
+8
+],
+[
+"At",
+"Rn",
+0
+],
+[
+"At",
+"StepZIDS",
+3
+],
+[
+"At",
+"Imm16",
+16
+],
+[
+"At",
+"Ax",
+11
+]
+],
+"except": []
+},
+{
+"name": "mul_y0",
+"opcode": 32800,
+"ops": [
+[
+"At",
+"Mul3",
+8
+],
+[
+"At",
+"Rn",
+0
+],
+[
+"At",
+"StepZIDS",
+3
+],
+[
+"At",
+"Ax",
+11
+]
+],
+"except": []
+},
+{
+"name": "mul_y0",
+"opcode": 32832,
+"ops": [
+[
+"At",
+"Mul3",
+8
+],
+[
+"At",
+"Register",
+0
+],
+[
+"At",
+"Ax",
+11
+]
+],
+"except": []
+},
+{
+"name": "mul",
+"opcode": 53248,
+"ops": [
+[
+"At",
+"Mul3",
+8
+],
+[
+"At",
+"R45",
+2
+],
+[
+"At",
+"StepZIDS",
+5
+],
+[
+"At",
+"R0123",
+0
+],
+[
+"At",
+"StepZIDS",
+3
+],
+[
+"At",
+"Ax",
+11
+]
+],
+"except": []
+},
+{
+"name": "mul_y0_r6",
+"opcode": 24224,
+"ops": [
+[
+"At",
+"Mul3",
+1
+],
+[
+"At",
+"Ax",
+0
+]
+],
+"except": []
+},
+{
+"name": "mul_y0",
+"opcode": 57344,
+"ops": [
+[
+"At",
+"Mul2",
+9
+],
+[
+"At",
+"MemImm8",
+0
+],
+[
+"At",
+"Ax",
+11
+]
+],
+"except": []
+},
+{
+"name": "mpyi",
+"opcode": 2048,
+"ops": [
+[
+"At",
+"Imm8s",
+0
+]
+],
+"except": []
+},
+{
+"name": "msu",
+"opcode": 53376,
+"ops": [
+[
+"At",
+"R45",
+2
+],
+[
+"At",
+"StepZIDS",
+5
+],
+[
+"At",
+"R0123",
+0
+],
+[
+"At",
+"StepZIDS",
+3
+],
+[
+"At",
+"Ax",
+8
+]
+],
+"except": []
+},
+{
+"name": "msu",
+"opcode": 37056,
+"ops": [
+[
+"At",
+"Rn",
+0
+],
+[
+"At",
+"StepZIDS",
+3
+],
+[
+"At",
+"Imm16",
+16
+],
+[
+"At",
+"Ax",
+8
+]
+],
+"except": []
+},
+{
+"name": "msusu",
+"opcode": 33380,
+"ops": [
+[
+"At",
+"ArRn2",
+3
+],
+[
+"At",
+"ArStep2",
+0
+],
+[
+"At",
+"Ax",
+8
+]
+],
+"except": []
+},
+{
+"name": "mac_x1to0",
+"opcode": 19844,
+"ops": [
+[
+"At",
+"Ax",
+1
+],
+[
+"Unused",
+0
+]
+],
+"except": []
+},
+{
+"name": "mac1",
+"opcode": 24104,
+"ops": [
+[
+"At",
+"ArpRn1",
+2
+],
+[
+"At",
+"ArpStep1",
+0
+],
+[
+"At",
+"ArpStep1",
+1
+],
+[
+"At",
+"Ax",
+8
+]
+],
+"except": []
+},
+{
+"name": "moda4",
+"opcode": 26368,
+"ops": [
+[
+"At",
+"Moda4",
+4
+],
+[
+"At",
+"Ax",
+12
+],
+[
+"At",
+"Cond",
+0
+]
+],
+"except": [
+[
+"Moda4",
+4,
+7
+]
+]
+},
+{
+"name": "moda3",
+"opcode": 28416,
+"ops": [
+[
+"At",
+"Moda3",
+4
+],
+[
+"At",
+"Bx",
+12
+],
+[
+"At",
+"Cond",
+0
+]
+],
+"except": []
+},
+{
+"name": "pacr1",
+"opcode": 55234,
+"ops": [
+[
+"At",
+"Ax",
+0
+]
+],
+"except": []
+},
+{
+"name": "clr",
+"opcode": 36560,
+"ops": [
+[
+"At",
+"Ab",
+2
+],
+[
+"At",
+"Ab",
+0
+]
+],
+"except": []
+},
+{
+"name": "clrr",
+"opcode": 36304,
+"ops": [
+[
+"At",
+"Ab",
+2
+],
+[
+"At",
+"Ab",
+0
+]
+],
+"except": []
+},
+{
+"name": "bkrep",
+"opcode": 23552,
+"ops": [
+[
+"At",
+"Imm8",
+0
+],
+[
+"At",
+"Address16",
+16
+]
+],
+"except": []
+},
+{
+"name": "bkrep",
+"opcode": 23808,
+"ops": [
+[
+"At",
+"Register",
+0
+],
+[
+"At",
+"Address18_16",
+16
+],
+[
+"At",
+"Address18_2",
+5
+]
+],
+"except": []
+},
+{
+"name": "bkrep_r6",
+"opcode": 36828,
+"ops": [
+[
+"At",
+"Address18_16",
+16
+],
+[
+"At",
+"Address18_2",
+0
+]
+],
+"except": []
+},
+{
+"name": "bkreprst",
+"opcode": 55964,
+"ops": [
+[
+"At",
+"ArRn2",
+0
+]
+],
+"except": []
+},
+{
+"name": "bkreprst_memsp",
+"opcode": 24392,
+"ops": [
+[
+"Unused",
+0
+],
+[
+"Unused",
+1
+]
+],
+"except": []
+},
+{
+"name": "bkrepsto",
+"opcode": 56028,
+"ops": [
+[
+"At",
+"ArRn2",
+0
+],
+[
+"Unused",
+10
+]
+],
+"except": []
+},
+{
+"name": "bkrepsto_memsp",
+"opcode": 37992,
+"ops": [
+[
+"Unused",
+0
+],
+[
+"Unused",
+1
+],
+[
+"Unused",
+2
+]
+],
+"except": []
+},
+{
+"name": "banke",
+"opcode": 19328,
+"ops": [
+[
+"At",
+"BankFlags",
+0
+]
+],
+"except": []
+},
+{
+"name": "bankr",
+"opcode": 36063,
+"ops": [],
+"except": []
+},
+{
+"name": "bankr",
+"opcode": 36060,
+"ops": [
+[
+"At",
+"Ar",
+0
+]
+],
+"except": []
+},
+{
+"name": "bankr",
+"opcode": 36048,
+"ops": [
+[
+"At",
+"Ar",
+2
+],
+[
+"At",
+"Arp",
+0
+]
+],
+"except": []
+},
+{
+"name": "bankr",
+"opcode": 36056,
+"ops": [
+[
+"At",
+"Arp",
+0
+]
+],
+"except": []
+},
+{
+"name": "bitrev",
+"opcode": 24248,
+"ops": [
+[
+"At",
+"Rn",
+0
+]
+],
+"except": []
+},
+{
+"name": "bitrev_dbrv",
+"opcode": 55272,
+"ops": [
+[
+"At",
+"Rn",
+0
+]
+],
+"except": []
+},
+{
+"name": "bitrev_ebrv",
+"opcode": 55264,
+"ops": [
+[
+"At",
+"Rn",
+0
+]
+],
+"except": []
+},
+{
+"name": "br",
+"opcode": 16768,
+"ops": [
+[
+"At",
+"Address18_16",
+16
+],
+[
+"At",
+"Address18_2",
+4
+],
+[
+"At",
+"Cond",
+0
+]
+],
+"except": []
+},
+{
+"name": "brr",
+"opcode": 20480,
+"ops": [
+[
+"At",
+"RelAddr7",
+4
+],
+[
+"At",
+"Cond",
+0
+]
+],
+"except": []
+},
+{
+"name": "break_",
+"opcode": 54208,
+"ops": [],
+"except": []
+},
+{
+"name": "call",
+"opcode": 16832,
+"ops": [
+[
+"At",
+"Address18_16",
+16
+],
+[
+"At",
+"Address18_2",
+4
+],
+[
+"At",
+"Cond",
+0
+]
+],
+"except": []
+},
+{
+"name": "calla",
+"opcode": 54400,
+"ops": [
+[
+"At",
+"Axl",
+8
+]
+],
+"except": []
+},
+{
+"name": "calla",
+"opcode": 54145,
+"ops": [
+[
+"At",
+"Ax",
+4
+]
+],
+"except": []
+},
+{
+"name": "callr",
+"opcode": 4096,
+"ops": [
+[
+"At",
+"RelAddr7",
+4
+],
+[
+"At",
+"Cond",
+0
+]
+],
+"except": []
+},
+{
+"name": "cntx_s",
+"opcode": 54144,
+"ops": [],
+"except": []
+},
+{
+"name": "cntx_r",
+"opcode": 54160,
+"ops": [],
+"except": []
+},
+{
+"name": "ret",
+"opcode": 17792,
+"ops": [
+[
+"At",
+"Cond",
+0
+]
+],
+"except": []
+},
+{
+"name": "retd",
+"opcode": 55168,
+"ops": [],
+"except": []
+},
+{
+"name": "reti",
+"opcode": 17856,
+"ops": [
+[
+"At",
+"Cond",
+0
+]
+],
+"except": []
+},
+{
+"name": "retic",
+"opcode": 17872,
+"ops": [
+[
+"At",
+"Cond",
+0
+]
+],
+"except": []
+},
+{
+"name": "retid",
+"opcode": 55232,
+"ops": [],
+"except": []
+},
+{
+"name": "retidc",
+"opcode": 54211,
+"ops": [],
+"except": []
+},
+{
+"name": "rets",
+"opcode": 2304,
+"ops": [
+[
+"At",
+"Imm8",
+0
+]
+],
+"except": []
+},
+{
+"name": "load_ps",
+"opcode": 19840,
+"ops": [
+[
+"At",
+"Imm2",
+0
+]
+],
+"except": []
+},
+{
+"name": "load_stepi",
+"opcode": 56192,
+"ops": [
+[
+"At",
+"Imm7s",
+0
+]
+],
+"except": []
+},
+{
+"name": "load_stepj",
+"opcode": 57216,
+"ops": [
+[
+"At",
+"Imm7s",
+0
+]
+],
+"except": []
+},
+{
+"name": "load_page",
+"opcode": 1024,
+"ops": [
+[
+"At",
+"Imm8",
+0
+]
+],
+"except": []
+},
+{
+"name": "load_modi",
+"opcode": 512,
+"ops": [
+[
+"At",
+"Imm9",
+0
+]
+],
+"except": []
+},
+{
+"name": "load_modj",
+"opcode": 2560,
+"ops": [
+[
+"At",
+"Imm9",
+0
+]
+],
+"except": []
+},
+{
+"name": "load_movpd",
+"opcode": 55256,
+"ops": [
+[
+"At",
+"Imm2",
+1
+],
+[
+"Unused",
+0
+]
+],
+"except": []
+},
+{
+"name": "load_ps01",
+"opcode": 16,
+"ops": [
+[
+"At",
+"Imm4",
+0
+]
+],
+"except": []
+},
+{
+"name": "push",
+"opcode": 24384,
+"ops": [
+[
+"At",
+"Imm16",
+16
+]
+],
+"except": []
+},
+{
+"name": "push",
+"opcode": 24128,
+"ops": [
+[
+"At",
+"Register",
+0
+]
+],
+"except": []
+},
+{
+"name": "push",
+"opcode": 55240,
+"ops": [
+[
+"At",
+"Abe",
+1
+],
+[
+"Unused",
+0
+]
+],
+"except": []
+},
+{
+"name": "push",
+"opcode": 54224,
+"ops": [
+[
+"At",
+"ArArpSttMod",
+0
+]
+],
+"except": []
+},
+{
+"name": "push_prpage",
+"opcode": 55292,
+"ops": [
+[
+"Unused",
+0
+],
+[
+"Unused",
+1
+]
+],
+"except": []
+},
+{
+"name": "push",
+"opcode": 55180,
+"ops": [
+[
+"At",
+"Px",
+1
+],
+[
+"Unused",
+0
+]
+],
+"except": []
+},
+{
+"name": "push_r6",
+"opcode": 54487,
+"ops": [
+[
+"Unused",
+5
+]
+],
+"except": []
+},
+{
+"name": "push_repc",
+"opcode": 55288,
+"ops": [
+[
+"Unused",
+0
+],
+[
+"Unused",
+1
+]
+],
+"except": []
+},
+{
+"name": "push_x0",
+"opcode": 54484,
+"ops": [
+[
+"Unused",
+5
+]
+],
+"except": []
+},
+{
+"name": "push_x1",
+"opcode": 54485,
+"ops": [
+[
+"Unused",
+5
+]
+],
+"except": []
+},
+{
+"name": "push_y1",
+"opcode": 54486,
+"ops": [
+[
+"Unused",
+5
+]
+],
+"except": []
+},
+{
+"name": "pusha",
+"opcode": 17284,
+"ops": [
+[
+"At",
+"Ax",
+6
+],
+[
+"Unused",
+0
+],
+[
+"Unused",
+1
+]
+],
+"except": []
+},
+{
+"name": "pusha",
+"opcode": 55176,
+"ops": [
+[
+"At",
+"Bx",
+1
+],
+[
+"Unused",
+0
+]
+],
+"except": []
+},
+{
+"name": "pop",
+"opcode": 24160,
+"ops": [
+[
+"At",
+"Register",
+0
+]
+],
+"except": []
+},
+{
+"name": "pop",
+"opcode": 18356,
+"ops": [
+[
+"At",
+"Abe",
+0
+]
+],
+"except": []
+},
+{
+"name": "pop",
+"opcode": 32967,
+"ops": [
+[
+"At",
+"ArArpSttMod",
+8
+]
+],
+"except": []
+},
+{
+"name": "pop",
+"opcode": 6,
+"ops": [
+[
+"At",
+"Bx",
+5
+],
+[
+"Unused",
+0
+]
+],
+"except": []
+},
+{
+"name": "pop_prpage",
+"opcode": 55284,
+"ops": [
+[
+"Unused",
+0
+],
+[
+"Unused",
+1
+]
+],
+"except": []
+},
+{
+"name": "pop",
+"opcode": 54422,
+"ops": [
+[
+"At",
+"Px",
+0
+]
+],
+"except": []
+},
+{
+"name": "pop_r6",
+"opcode": 36,
+"ops": [
+[
+"Unused",
+0
+]
+],
+"except": []
+},
+{
+"name": "pop_repc",
+"opcode": 55280,
+"ops": [
+[
+"Unused",
+0
+],
+[
+"Unused",
+1
+]
+],
+"except": []
+},
+{
+"name": "pop_x0",
+"opcode": 54420,
+"ops": [],
+"except": []
+},
+{
+"name": "pop_x1",
+"opcode": 54421,
+"ops": [],
+"except": []
+},
+{
+"name": "pop_y1",
+"opcode": 4,
+"ops": [
+[
+"Unused",
+0
+]
+],
+"except": []
+},
+{
+"name": "popa",
+"opcode": 18352,
+"ops": [
+[
+"At",
+"Ab",
+0
+]
+],
+"except": []
+},
+{
+"name": "rep",
+"opcode": 3072,
+"ops": [
+[
+"At",
+"Imm8",
+0
+]
+],
+"except": []
+},
+{
+"name": "rep",
+"opcode": 3328,
+"ops": [
+[
+"At",
+"Register",
+0
+]
+],
+"except": []
+},
+{
+"name": "rep_r6",
+"opcode": 2,
+"ops": [
+[
+"Unused",
+0
+]
+],
+"except": []
+},
+{
+"name": "shfc",
+"opcode": 53888,
+"ops": [
+[
+"At",
+"Ab",
+10
+],
+[
+"At",
+"Ab",
+5
+],
+[
+"At",
+"Cond",
+0
+]
+],
+"except": []
+},
+{
+"name": "shfi",
+"opcode": 37440,
+"ops": [
+[
+"At",
+"Ab",
+10
+],
+[
+"At",
+"Ab",
+7
+],
+[
+"At",
+"Imm6s",
+0
+]
+],
+"except": []
+},
+{
+"name": "tst4b",
+"opcode": 32961,
+"ops": [
+[
+"At",
+"ArRn2",
+10
+],
+[
+"At",
+"ArStep2",
+8
+]
+],
+"except": []
+},
+{
+"name": "tst4b",
+"opcode": 18304,
+"ops": [
+[
+"At",
+"ArRn2",
+2
+],
+[
+"At",
+"ArStep2",
+0
+],
+[
+"At",
+"Ax",
+4
+]
+],
+"except": []
+},
+{
+"name": "tstb",
+"opcode": 61440,
+"ops": [
+[
+"At",
+"MemImm8",
+0
+],
+[
+"At",
+"Imm4",
+8
+]
+],
+"except": []
+},
+{
+"name": "tstb",
+"opcode": 36896,
+"ops": [
+[
+"At",
+"Rn",
+0
+],
+[
+"At",
+"StepZIDS",
+3
+],
+[
+"At",
+"Imm4",
+8
+]
+],
+"except": []
+},
+{
+"name": "tstb",
+"opcode": 36864,
+"ops": [
+[
+"At",
+"Register",
+0
+],
+[
+"At",
+"Imm4",
+8
+]
+],
+"except": [
+[
+"Register",
+0,
+24
+]
+]
+},
+{
+"name": "tstb_r6",
+"opcode": 36888,
+"ops": [
+[
+"At",
+"Imm4",
+8
+]
+],
+"except": []
+},
+{
+"name": "tstb",
+"opcode": 40,
+"ops": [
+[
+"At",
+"SttMod",
+0
+],
+[
+"At",
+"Imm16",
+16
+]
+],
+"except": []
+},
+{
+"name": "and_",
+"opcode": 26480,
+"ops": [
+[
+"At",
+"Ab",
+2
+],
+[
+"At",
+"Ab",
+0
+],
+[
+"At",
+"Ax",
+12
+]
+],
+"except": []
+},
+{
+"name": "dint",
+"opcode": 17344,
+"ops": [],
+"except": []
+},
+{
+"name": "eint",
+"opcode": 17280,
+"ops": [],
+"except": []
+},
+{
+"name": "exp",
+"opcode": 37984,
+"ops": [
+[
+"At",
+"Bx",
+0
+]
+],
+"except": []
+},
+{
+"name": "exp",
+"opcode": 36960,
+"ops": [
+[
+"At",
+"Bx",
+0
+],
+[
+"At",
+"Ax",
+8
+]
+],
+"except": []
+},
+{
+"name": "exp",
+"opcode": 40000,
+"ops": [
+[
+"At",
+"Rn",
+0
+],
+[
+"At",
+"StepZIDS",
+3
+]
+],
+"except": []
+},
+{
+"name": "exp",
+"opcode": 38976,
+"ops": [
+[
+"At",
+"Rn",
+0
+],
+[
+"At",
+"StepZIDS",
+3
+],
+[
+"At",
+"Ax",
+8
+]
+],
+"except": []
+},
+{
+"name": "exp",
+"opcode": 37952,
+"ops": [
+[
+"At",
+"Register",
+0
+]
+],
+"except": []
+},
+{
+"name": "exp",
+"opcode": 36928,
+"ops": [
+[
+"At",
+"Register",
+0
+],
+[
+"At",
+"Ax",
+8
+]
+],
+"except": []
+},
+{
+"name": "exp_r6",
+"opcode": 55233,
+"ops": [],
+"except": []
+},
+{
+"name": "exp_r6",
+"opcode": 54146,
+"ops": [
+[
+"At",
+"Ax",
+4
+]
+],
+"except": []
+},
+{
+"name": "modr",
+"opcode": 128,
+"ops": [
+[
+"At",
+"Rn",
+0
+],
+[
+"At",
+"StepZIDS",
+3
+]
+],
+"except": []
+},
+{
+"name": "modr_dmod",
+"opcode": 160,
+"ops": [
+[
+"At",
+"Rn",
+0
+],
+[
+"At",
+"StepZIDS",
+3
+]
+],
+"except": []
+},
+{
+"name": "modr_i2",
+"opcode": 18832,
+"ops": [
+[
+"At",
+"Rn",
+0
+]
+],
+"except": []
+},
+{
+"name": "modr_i2_dmod",
+"opcode": 18840,
+"ops": [
+[
+"At",
+"Rn",
+0
+]
+],
+"except": []
+},
+{
+"name": "modr_d2",
+"opcode": 23968,
+"ops": [
+[
+"At",
+"Rn",
+0
+]
+],
+"except": []
+},
+{
+"name": "modr_d2_dmod",
+"opcode": 23976,
+"ops": [
+[
+"At",
+"Rn",
+0
+]
+],
+"except": []
+},
+{
+"name": "modr_eemod",
+"opcode": 53908,
+"ops": [
+[
+"At",
+"ArpRn2",
+10
+],
+[
+"At",
+"ArpStep2",
+0
+],
+[
+"At",
+"ArpStep2",
+5
+]
+],
+"except": []
+},
+{
+"name": "modr_edmod",
+"opcode": 3456,
+"ops": [
+[
+"At",
+"ArpRn2",
+5
+],
+[
+"At",
+"ArpStep2",
+1
+],
+[
+"At",
+"ArpStep2",
+3
+]
+],
+"except": []
+},
+{
+"name": "modr_demod",
+"opcode": 33892,
+"ops": [
+[
+"At",
+"ArpRn2",
+8
+],
+[
+"At",
+"ArpStep2",
+0
+],
+[
+"At",
+"ArpStep2",
+3
+]
+],
+"except": []
+},
+{
+"name": "modr_ddmod",
+"opcode": 3457,
+"ops": [
+[
+"At",
+"ArpRn2",
+5
+],
+[
+"At",
+"ArpStep2",
+1
+],
+[
+"At",
+"ArpStep2",
+3
+]
+],
+"except": []
+},
+{
+"name": "mov",
+"opcode": 53904,
+"ops": [
+[
+"At",
+"Ab",
+10
+],
+[
+"At",
+"Ab",
+5
+]
+],
+"except": []
+},
+{
+"name": "mov_dvm",
+"opcode": 53912,
+"ops": [
+[
+"At",
+"Abl",
+10
+]
+],
+"except": []
+},
+{
+"name": "mov_x0",
+"opcode": 53976,
+"ops": [
+[
+"At",
+"Abl",
+10
+]
+],
+"except": []
+},
+{
+"name": "mov_x1",
+"opcode": 54164,
+"ops": [
+[
+"At",
+"Abl",
+0
+]
+],
+"except": []
+},
+{
+"name": "mov_y1",
+"opcode": 54148,
+"ops": [
+[
+"At",
+"Abl",
+0
+]
+],
+"except": []
+},
+{
+"name": "mov",
+"opcode": 12288,
+"ops": [
+[
+"At",
+"Ablh",
+9
+],
+[
+"At",
+"MemImm8",
+0
+]
+],
+"except": []
+},
+{
+"name": "mov",
+"opcode": 54460,
+"ops": [
+[
+"At",
+"Axl",
+8
+],
+[
+"At",
+"MemImm16",
+16
+]
+],
+"except": []
+},
+{
+"name": "mov",
+"opcode": 54428,
+"ops": [
+[
+"At",
+"Axl",
+8
+],
+[
+"At",
+"MemR7Imm16",
+16
+]
+],
+"except": []
+},
+{
+"name": "mov",
+"opcode": 56448,
+"ops": [
+[
+"At",
+"Axl",
+8
+],
+[
+"At",
+"MemR7Imm7s",
+0
+]
+],
+"except": []
+},
+{
+"name": "mov",
+"opcode": 54456,
+"ops": [
+[
+"At",
+"MemImm16",
+16
+],
+[
+"At",
+"Ax",
+8
+]
+],
+"except": []
+},
+{
+"name": "mov",
+"opcode": 24832,
+"ops": [
+[
+"At",
+"MemImm8",
+0
+],
+[
+"At",
+"Ab",
+11
+]
+],
+"except": []
+},
+{
+"name": "mov",
+"opcode": 25088,
+"ops": [
+[
+"At",
+"MemImm8",
+0
+],
+[
+"At",
+"Ablh",
+10
+]
+],
+"except": []
+},
+{
+"name": "mov_eu",
+"opcode": 25856,
+"ops": [
+[
+"At",
+"MemImm8",
+0
+],
+[
+"At",
+"Axh",
+12
+]
+],
+"except": []
+},
+{
+"name": "mov",
+"opcode": 24576,
+"ops": [
+[
+"At",
+"MemImm8",
+0
+],
+[
+"At",
+"RnOld",
+10
+]
+],
+"except": []
+},
+{
+"name": "mov_sv",
+"opcode": 27904,
+"ops": [
+[
+"At",
+"MemImm8",
+0
+]
+],
+"except": []
+},
+{
+"name": "mov_dvm_to",
+"opcode": 54417,
+"ops": [
+[
+"At",
+"Ab",
+5
+]
+],
+"except": []
+},
+{
+"name": "mov_icr_to",
+"opcode": 54418,
+"ops": [
+[
+"At",
+"Ab",
+5
+]
+],
+"except": []
+},
+{
+"name": "mov",
+"opcode": 24096,
+"ops": [
+[
+"At",
+"Imm16",
+16
+],
+[
+"At",
+"Bx",
+8
+]
+],
+"except": []
+},
+{
+"name": "mov",
+"opcode": 24064,
+"ops": [
+[
+"At",
+"Imm16",
+16
+],
+[
+"At",
+"Register",
+0
+]
+],
+"except": []
+},
+{
+"name": "mov_icr",
+"opcode": 20352,
+"ops": [
+[
+"At",
+"Imm5",
+0
+]
+],
+"except": []
+},
+{
+"name": "mov",
+"opcode": 9472,
+"ops": [
+[
+"At",
+"Imm8s",
+0
+],
+[
+"At",
+"Axh",
+12
+]
+],
+"except": []
+},
+{
+"name": "mov_ext0",
+"opcode": 10496,
+"ops": [
+[
+"At",
+"Imm8s",
+0
+]
+],
+"except": []
+},
+{
+"name": "mov_ext1",
+"opcode": 11520,
+"ops": [
+[
+"At",
+"Imm8s",
+0
+]
+],
+"except": []
+},
+{
+"name": "mov_ext2",
+"opcode": 14592,
+"ops": [
+[
+"At",
+"Imm8s",
+0
+]
+],
+"except": []
+},
+{
+"name": "mov_ext3",
+"opcode": 15616,
+"ops": [
+[
+"At",
+"Imm8s",
+0
+]
+],
+"except": []
+},
+{
+"name": "mov",
+"opcode": 8960,
+"ops": [
+[
+"At",
+"Imm8s",
+0
+],
+[
+"At",
+"RnOld",
+10
+]
+],
+"except": []
+},
+{
+"name": "mov_sv",
+"opcode": 1280,
+"ops": [
+[
+"At",
+"Imm8s",
+0
+]
+],
+"except": []
+},
+{
+"name": "mov",
+"opcode": 8448,
+"ops": [
+[
+"At",
+"Imm8",
+0
+],
+[
+"At",
+"Axl",
+12
+]
+],
+"except": []
+},
+{
+"name": "mov",
+"opcode": 54424,
+"ops": [
+[
+"At",
+"MemR7Imm16",
+16
+],
+[
+"At",
+"Ax",
+8
+]
+],
+"except": []
+},
+{
+"name": "mov",
+"opcode": 55424,
+"ops": [
+[
+"At",
+"MemR7Imm7s",
+0
+],
+[
+"At",
+"Ax",
+8
+]
+],
+"except": []
+},
+{
+"name": "mov",
+"opcode": 39104,
+"ops": [
+[
+"At",
+"Rn",
+0
+],
+[
+"At",
+"StepZIDS",
+3
+],
+[
+"At",
+"Bx",
+8
+]
+],
+"except": []
+},
+{
+"name": "mov",
+"opcode": 7168,
+"ops": [
+[
+"At",
+"Rn",
+0
+],
+[
+"At",
+"StepZIDS",
+3
+],
+[
+"At",
+"Register",
+5
+]
+],
+"except": []
+},
+{
+"name": "mov_memsp_to",
+"opcode": 18400,
+"ops": [
+[
+"At",
+"Register",
+0
+]
+],
+"except": []
+},
+{
+"name": "mov_mixp_to",
+"opcode": 18368,
+"ops": [
+[
+"At",
+"Register",
+0
+]
+],
+"except": []
+},
+{
+"name": "mov",
+"opcode": 8192,
+"ops": [
+[
+"At",
+"RnOld",
+9
+],
+[
+"At",
+"MemImm8",
+0
+]
+],
+"except": []
+},
+{
+"name": "mov_icr",
+"opcode": 20416,
+"ops": [
+[
+"At",
+"Register",
+0
+]
+],
+"except": []
+},
+{
+"name": "mov_mixp",
+"opcode": 24192,
+"ops": [
+[
+"At",
+"Register",
+0
+]
+],
+"except": []
+},
+{
+"name": "mov",
+"opcode": 6144,
+"ops": [
+[
+"At",
+"Register",
+5
+],
+[
+"At",
+"Rn",
+0
+],
+[
+"At",
+"StepZIDS",
+3
+]
+],
+"except": [
+[
+"Register",
+5,
+24
+],
+[
+"Register",
+5,
+25
+]
+]
+},
+{
+"name": "mov",
+"opcode": 24256,
+"ops": [
+[
+"At",
+"Register",
+0
+],
+[
+"At",
+"Bx",
+5
+]
+],
+"except": []
+},
+{
+"name": "mov",
+"opcode": 22528,
+"ops": [
+[
+"At",
+"Register",
+0
+],
+[
+"At",
+"Register",
+5
+]
+],
+"except": [
+[
+"Register",
+0,
+24
+],
+[
+"Register",
+0,
+25
+]
+]
+},
+{
+"name": "mov_repc_to",
+"opcode": 54416,
+"ops": [
+[
+"At",
+"Ab",
+5
+]
+],
+"except": []
+},
+{
+"name": "mov_sv_to",
+"opcode": 32000,
+"ops": [
+[
+"At",
+"MemImm8",
+0
+]
+],
+"except": []
+},
+{
+"name": "mov_x0_to",
+"opcode": 54419,
+"ops": [
+[
+"At",
+"Ab",
+5
+]
+],
+"except": []
+},
+{
+"name": "mov_x1_to",
+"opcode": 18881,
+"ops": [
+[
+"At",
+"Ab",
+4
+]
+],
+"except": []
+},
+{
+"name": "mov_y1_to",
+"opcode": 53913,
+"ops": [
+[
+"At",
+"Ab",
+10
+]
+],
+"except": []
+},
+{
+"name": "mov",
+"opcode": 8,
+"ops": [
+[
+"At",
+"Imm16",
+16
+],
+[
+"At",
+"ArArp",
+0
+]
+],
+"except": []
+},
+{
+"name": "mov_r6",
+"opcode": 35,
+"ops": [
+[
+"At",
+"Imm16",
+16
+]
+],
+"except": []
+},
+{
+"name": "mov_repc",
+"opcode": 1,
+"ops": [
+[
+"At",
+"Imm16",
+16
+]
+],
+"except": []
+},
+{
+"name": "mov_stepi0",
+"opcode": 35185,
+"ops": [
+[
+"At",
+"Imm16",
+16
+]
+],
+"except": []
+},
+{
+"name": "mov_stepj0",
+"opcode": 35193,
+"ops": [
+[
+"At",
+"Imm16",
+16
+]
+],
+"except": []
+},
+{
+"name": "mov",
+"opcode": 48,
+"ops": [
+[
+"At",
+"Imm16",
+16
+],
+[
+"At",
+"SttMod",
+0
+]
+],
+"except": []
+},
+{
+"name": "mov_prpage",
+"opcode": 24016,
+"ops": [
+[
+"At",
+"Imm4",
+0
+]
+],
+"except": []
+},
+{
+"name": "movd",
+"opcode": 24448,
+"ops": [
+[
+"At",
+"R0123",
+0
+],
+[
+"At",
+"StepZIDS",
+3
+],
+[
+"At",
+"R45",
+2
+],
+[
+"At",
+"StepZIDS",
+5
+]
+],
+"except": []
+},
+{
+"name": "movp",
+"opcode": 64,
+"ops": [
+[
+"At",
+"Axl",
+5
+],
+[
+"At",
+"Register",
+0
+]
+],
+"except": []
+},
+{
+"name": "movp",
+"opcode": 3392,
+"ops": [
+[
+"At",
+"Ax",
+5
+],
+[
+"At",
+"Register",
+0
+]
+],
+"except": []
+},
+{
+"name": "movp",
+"opcode": 1536,
+"ops": [
+[
+"At",
+"Rn",
+0
+],
+[
+"At",
+"StepZIDS",
+3
+],
+[
+"At",
+"R0123",
+5
+],
+[
+"At",
+"StepZIDS",
+7
+]
+],
+"except": []
+},
+{
+"name": "movpdw",
+"opcode": 54425,
+"ops": [
+[
+"At",
+"Ax",
+8
+]
+],
+"except": []
+},
+{
+"name": "mov_a0h_stepi0",
+"opcode": 54427,
+"ops": [],
+"except": []
+},
+{
+"name": "mov_a0h_stepj0",
+"opcode": 54683,
+"ops": [],
+"except": []
+},
+{
+"name": "mov_stepi0_a0h",
+"opcode": 54402,
+"ops": [],
+"except": []
+},
+{
+"name": "mov_stepj0_a0h",
+"opcode": 54658,
+"ops": [],
+"except": []
+},
+{
+"name": "mov_prpage",
+"opcode": 37220,
+"ops": [
+[
+"At",
+"Abl",
+0
+]
+],
+"except": []
+},
+{
+"name": "mov_repc",
+"opcode": 36964,
+"ops": [
+[
+"At",
+"Abl",
+0
+]
+],
+"except": []
+},
+{
+"name": "mov",
+"opcode": 38208,
+"ops": [
+[
+"At",
+"Abl",
+3
+],
+[
+"At",
+"ArArp",
+0
+]
+],
+"except": []
+},
+{
+"name": "mov",
+"opcode": 40032,
+"ops": [
+[
+"At",
+"Abl",
+3
+],
+[
+"At",
+"SttMod",
+0
+]
+],
+"except": []
+},
+{
+"name": "mov_prpage_to",
+"opcode": 24240,
+"ops": [
+[
+"At",
+"Abl",
+0
+]
+],
+"except": []
+},
+{
+"name": "mov_repc_to",
+"opcode": 53977,
+"ops": [
+[
+"At",
+"Abl",
+10
+]
+],
+"except": []
+},
+{
+"name": "mov",
+"opcode": 38240,
+"ops": [
+[
+"At",
+"ArArp",
+0
+],
+[
+"At",
+"Abl",
+3
+]
+],
+"except": []
+},
+{
+"name": "mov",
+"opcode": 54008,
+"ops": [
+[
+"At",
+"SttMod",
+0
+],
+[
+"At",
+"Abl",
+10
+]
+],
+"except": []
+},
+{
+"name": "mov_repc_to",
+"opcode": 55248,
+"ops": [
+[
+"At",
+"ArRn1",
+1
+],
+[
+"At",
+"ArStep1",
+0
+]
+],
+"except": []
+},
+{
+"name": "mov",
+"opcode": 54408,
+"ops": [
+[
+"At",
+"ArArp",
+0
+],
+[
+"At",
+"ArRn1",
+8
+],
+[
+"At",
+"ArStep1",
+5
+]
+],
+"except": []
+},
+{
+"name": "mov",
+"opcode": 18848,
+"ops": [
+[
+"At",
+"SttMod",
+0
+],
+[
+"At",
+"ArRn1",
+4
+],
+[
+"At",
+"ArStep1",
+3
+]
+],
+"except": []
+},
+{
+"name": "mov_repc",
+"opcode": 55252,
+"ops": [
+[
+"At",
+"ArRn1",
+1
+],
+[
+"At",
+"ArStep1",
+0
+]
+],
+"except": []
+},
+{
+"name": "mov",
+"opcode": 32866,
+"ops": [
+[
+"At",
+"ArRn1",
+4
+],
+[
+"At",
+"ArStep1",
+3
+],
+[
+"At",
+"ArArp",
+8
+]
+],
+"except": []
+},
+{
+"name": "mov",
+"opcode": 32867,
+"ops": [
+[
+"At",
+"ArRn1",
+4
+],
+[
+"At",
+"ArStep1",
+3
+],
+[
+"At",
+"SttMod",
+8
+]
+],
+"except": []
+},
+{
+"name": "mov_repc_to",
+"opcode": 54216,
+"ops": [
+[
+"At",
+"MemR7Imm16",
+16
+],
+[
+"Unused",
+0
+],
+[
+"Unused",
+1
+],
+[
+"Unused",
+2
+]
+],
+"except": []
+},
+{
+"name": "mov",
+"opcode": 24400,
+"ops": [
+[
+"At",
+"ArArpSttMod",
+0
+],
+[
+"At",
+"MemR7Imm16",
+16
+]
+],
+"except": []
+},
+{
+"name": "mov_repc",
+"opcode": 53980,
+"ops": [
+[
+"At",
+"MemR7Imm16",
+16
+],
+[
+"Unused",
+0
+],
+[
+"Unused",
+1
+],
+[
+"Unused",
+10
+]
+],
+"except": []
+},
+{
+"name": "mov",
+"opcode": 19856,
+"ops": [
+[
+"At",
+"MemR7Imm16",
+16
+],
+[
+"At",
+"ArArpSttMod",
+0
+]
+],
+"except": []
+},
+{
+"name": "mov_pc",
+"opcode": 34923,
+"ops": [
+[
+"At",
+"Ax",
+8
+]
+],
+"except": []
+},
+{
+"name": "mov_pc",
+"opcode": 34915,
+"ops": [
+[
+"At",
+"Bx",
+8
+]
+],
+"except": []
+},
+{
+"name": "mov_mixp_to",
+"opcode": 35443,
+"ops": [
+[
+"At",
+"Bx",
+3
+]
+],
+"except": []
+},
+{
+"name": "mov_mixp_r6",
+"opcode": 17281,
+"ops": [],
+"except": []
+},
+{
+"name": "mov_p0h_to",
+"opcode": 17282,
+"ops": [
+[
+"At",
+"Bx",
+0
+]
+],
+"except": []
+},
+{
+"name": "mov_p0h_r6",
+"opcode": 54210,
+"ops": [],
+"except": []
+},
+{
+"name": "mov_p0h_to",
+"opcode": 19296,
+"ops": [
+[
+"At",
+"Register",
+0
+]
+],
+"except": []
+},
+{
+"name": "mov_p0",
+"opcode": 36820,
+"ops": [
+[
+"At",
+"Ab",
+0
+]
+],
+"except": []
+},
+{
+"name": "mov_p1_to",
+"opcode": 36824,
+"ops": [
+[
+"At",
+"Ab",
+0
+]
+],
+"except": []
+},
+{
+"name": "mov2",
+"opcode": 35024,
+"ops": [
+[
+"At",
+"Px",
+1
+],
+[
+"At",
+"ArRn2",
+8
+],
+[
+"At",
+"ArStep2",
+2
+]
+],
+"except": []
+},
+{
+"name": "mov2s",
+"opcode": 35025,
+"ops": [
+[
+"At",
+"Px",
+1
+],
+[
+"At",
+"ArRn2",
+8
+],
+[
+"At",
+"ArStep2",
+2
+]
+],
+"except": []
+},
+{
+"name": "mov2",
+"opcode": 53906,
+"ops": [
+[
+"At",
+"ArRn2",
+10
+],
+[
+"At",
+"ArStep2",
+5
+],
+[
+"At",
+"Px",
+0
+]
+],
+"except": []
+},
+{
+"name": "mova",
+"opcode": 19904,
+"ops": [
+[
+"At",
+"Ab",
+4
+],
+[
+"At",
+"ArRn2",
+2
+],
+[
+"At",
+"ArStep2",
+0
+]
+],
+"except": []
+},
+{
+"name": "mova",
+"opcode": 19392,
+"ops": [
+[
+"At",
+"ArRn2",
+2
+],
+[
+"At",
+"ArStep2",
+0
+],
+[
+"At",
+"Ab",
+4
+]
+],
+"except": []
+},
+{
+"name": "mov_r6_to",
+"opcode": 54401,
+"ops": [
+[
+"At",
+"Bx",
+8
+]
+],
+"except": []
+},
+{
+"name": "mov_r6_mixp",
+"opcode": 17345,
+"ops": [],
+"except": []
+},
+{
+"name": "mov_r6_to",
+"opcode": 24320,
+"ops": [
+[
+"At",
+"Register",
+0
+]
+],
+"except": []
+},
+{
+"name": "mov_r6",
+"opcode": 24416,
+"ops": [
+[
+"At",
+"Register",
+0
+]
+],
+"except": []
+},
+{
+"name": "mov_memsp_r6",
+"opcode": 53916,
+"ops": [
+[
+"Unused",
+0
+],
+[
+"Unused",
+1
+],
+[
+"Unused",
+10
+]
+],
+"except": []
+},
+{
+"name": "mov_r6_to",
+"opcode": 6912,
+"ops": [
+[
+"At",
+"Rn",
+0
+],
+[
+"At",
+"StepZIDS",
+3
+]
+],
+"except": []
+},
+{
+"name": "mov_r6",
+"opcode": 6944,
+"ops": [
+[
+"At",
+"Rn",
+0
+],
+[
+"At",
+"StepZIDS",
+3
+]
+],
+"except": []
+},
+{
+"name": "movs",
+"opcode": 25344,
+"ops": [
+[
+"At",
+"MemImm8",
+0
+],
+[
+"At",
+"Ab",
+11
+]
+],
+"except": []
+},
+{
+"name": "movs",
+"opcode": 384,
+"ops": [
+[
+"At",
+"Rn",
+0
+],
+[
+"At",
+"StepZIDS",
+3
+],
+[
+"At",
+"Ab",
+5
+]
+],
+"except": []
+},
+{
+"name": "movs",
+"opcode": 256,
+"ops": [
+[
+"At",
+"Register",
+0
+],
+[
+"At",
+"Ab",
+5
+]
+],
+"except": []
+},
+{
+"name": "movs_r6_to",
+"opcode": 24386,
+"ops": [
+[
+"At",
+"Ax",
+0
+]
+],
+"except": []
+},
+{
+"name": "movsi",
+"opcode": 16512,
+"ops": [
+[
+"At",
+"RnOld",
+9
+],
+[
+"At",
+"Ab",
+5
+],
+[
+"At",
+"Imm5s",
+0
+]
+],
+"except": []
+},
+{
+"name": "mov2_axh_m_y0_m",
+"opcode": 17296,
+"ops": [
+[
+"At",
+"Axh",
+6
+],
+[
+"At",
+"ArRn2",
+2
+],
+[
+"At",
+"ArStep2",
+0
+]
+],
+"except": []
+},
+{
+"name": "mov2_ax_mij",
+"opcode": 17312,
+"ops": [
+[
+"At",
+"Ab",
+3
+],
+[
+"At",
+"ArpRn1",
+2
+],
+[
+"At",
+"ArpStep1",
+0
+],
+[
+"At",
+"ArpStep1",
+1
+]
+],
+"except": []
+},
+{
+"name": "mov2_ax_mji",
+"opcode": 17376,
+"ops": [
+[
+"At",
+"Ab",
+3
+],
+[
+"At",
+"ArpRn1",
+2
+],
+[
+"At",
+"ArpStep1",
+0
+],
+[
+"At",
+"ArpStep1",
+1
+]
+],
+"except": []
+},
+{
+"name": "mov2_mij_ax",
+"opcode": 32964,
+"ops": [
+[
+"At",
+"ArpRn1",
+9
+],
+[
+"At",
+"ArpStep1",
+0
+],
+[
+"At",
+"ArpStep1",
+8
+],
+[
+"At",
+"Ab",
+10
+]
+],
+"except": []
+},
+{
+"name": "mov2_mji_ax",
+"opcode": 54464,
+"ops": [
+[
+"At",
+"ArpRn1",
+5
+],
+[
+"At",
+"ArpStep1",
+0
+],
+[
+"At",
+"ArpStep1",
+1
+],
+[
+"At",
+"Ab",
+2
+]
+],
+"except": []
+},
+{
+"name": "mov2_abh_m",
+"opcode": 40256,
+"ops": [
+[
+"At",
+"Abh",
+4
+],
+[
+"At",
+"Abh",
+2
+],
+[
+"At",
+"ArRn1",
+1
+],
+[
+"At",
+"ArStep1",
+0
+]
+],
+"except": []
+},
+{
+"name": "exchange_iaj",
+"opcode": 35936,
+"ops": [
+[
+"At",
+"Axh",
+4
+],
+[
+"At",
+"ArpRn2",
+8
+],
+[
+"At",
+"ArpStep2",
+0
+],
+[
+"At",
+"ArpStep2",
+2
+]
+],
+"except": []
+},
+{
+"name": "exchange_riaj",
+"opcode": 32640,
+"ops": [
+[
+"At",
+"Axh",
+6
+],
+[
+"At",
+"ArpRn2",
+4
+],
+[
+"At",
+"ArpStep2",
+0
+],
+[
+"At",
+"ArpStep2",
+2
+]
+],
+"except": []
+},
+{
+"name": "exchange_jai",
+"opcode": 18688,
+"ops": [
+[
+"At",
+"Axh",
+6
+],
+[
+"At",
+"ArpRn2",
+4
+],
+[
+"At",
+"ArpStep2",
+0
+],
+[
+"At",
+"ArpStep2",
+2
+]
+],
+"except": []
+},
+{
+"name": "exchange_rjai",
+"opcode": 18432,
+"ops": [
+[
+"At",
+"Axh",
+6
+],
+[
+"At",
+"ArpRn2",
+4
+],
+[
+"At",
+"ArpStep2",
+0
+],
+[
+"At",
+"ArpStep2",
+2
+]
+],
+"except": []
+},
+{
+"name": "movr",
+"opcode": 34916,
+"ops": [
+[
+"At",
+"ArRn2",
+3
+],
+[
+"At",
+"ArStep2",
+0
+],
+[
+"At",
+"Abh",
+8
+]
+],
+"except": []
+},
+{
+"name": "movr",
+"opcode": 40160,
+"ops": [
+[
+"At",
+"Rn",
+0
+],
+[
+"At",
+"StepZIDS",
+3
+],
+[
+"At",
+"Ax",
+8
+]
+],
+"except": []
+},
+{
+"name": "movr",
+"opcode": 40128,
+"ops": [
+[
+"At",
+"Register",
+0
+],
+[
+"At",
+"Ax",
+8
+]
+],
+"except": []
+},
+{
+"name": "movr",
+"opcode": 24052,
+"ops": [
+[
+"At",
+"Bx",
+1
+],
+[
+"At",
+"Ax",
+0
+]
+],
+"except": []
+},
+{
+"name": "movr_r6_to",
+"opcode": 35169,
+"ops": [
+[
+"At",
+"Ax",
+3
+]
+],
+"except": []
+},
+{
+"name": "lim",
+"opcode": 18880,
+"ops": [
+[
+"At",
+"Ax",
+5
+],
+[
+"At",
+"Ax",
+4
+]
+],
+"except": []
+},
+{
+"name": "vtrclr0",
+"opcode": 24389,
+"ops": [],
+"except": []
+},
+{
+"name": "vtrclr1",
+"opcode": 24390,
+"ops": [],
+"except": []
+},
+{
+"name": "vtrclr",
+"opcode": 24391,
+"ops": [],
+"except": []
+},
+{
+"name": "vtrmov0",
+"opcode": 53914,
+"ops": [
+[
+"At",
+"Axl",
+0
+]
+],
+"except": []
+},
+{
+"name": "vtrmov1",
+"opcode": 54938,
+"ops": [
+[
+"At",
+"Axl",
+0
+]
+],
+"except": []
+},
+{
+"name": "vtrmov",
+"opcode": 54147,
+"ops": [
+[
+"At",
+"Axl",
+4
+]
+],
+"except": []
+},
+{
+"name": "vtrshr",
+"opcode": 55169,
+"ops": [],
+"except": []
+},
+{
+"name": "clrp0",
+"opcode": 24062,
+"ops": [],
+"except": []
+},
+{
+"name": "clrp1",
+"opcode": 24061,
+"ops": [],
+"except": []
+},
+{
+"name": "clrp",
+"opcode": 24063,
+"ops": [],
+"except": []
+},
+{
+"name": "max_ge",
+"opcode": 33888,
+"ops": [
+[
+"At",
+"Ax",
+8
+],
+[
+"At",
+"StepZIDS",
+3
+]
+],
+"except": []
+},
+{
+"name": "max_gt",
+"opcode": 34400,
+"ops": [
+[
+"At",
+"Ax",
+8
+],
+[
+"At",
+"StepZIDS",
+3
+]
+],
+"except": []
+},
+{
+"name": "min_le",
+"opcode": 34912,
+"ops": [
+[
+"At",
+"Ax",
+8
+],
+[
+"At",
+"StepZIDS",
+3
+]
+],
+"except": []
+},
+{
+"name": "min_lt",
+"opcode": 35424,
+"ops": [
+[
+"At",
+"Ax",
+8
+],
+[
+"At",
+"StepZIDS",
+3
+]
+],
+"except": []
+},
+{
+"name": "max_ge_r0",
+"opcode": 32864,
+"ops": [
+[
+"At",
+"Ax",
+8
+],
+[
+"At",
+"StepZIDS",
+3
+]
+],
+"except": []
+},
+{
+"name": "max_gt_r0",
+"opcode": 33376,
+"ops": [
+[
+"At",
+"Ax",
+8
+],
+[
+"At",
+"StepZIDS",
+3
+]
+],
+"except": []
+},
+{
+"name": "min_le_r0",
+"opcode": 18336,
+"ops": [
+[
+"At",
+"Ax",
+3
+],
+[
+"At",
+"StepZIDS",
+0
+]
+],
+"except": []
+},
+{
+"name": "min_lt_r0",
+"opcode": 18340,
+"ops": [
+[
+"At",
+"Ax",
+3
+],
+[
+"At",
+"StepZIDS",
+0
+]
+],
+"except": []
+},
+{
+"name": "divs",
+"opcode": 3584,
+"ops": [
+[
+"At",
+"MemImm8",
+0
+],
+[
+"At",
+"Ax",
+8
+]
+],
+"except": []
+},
+{
+"name": "sqr_sqr_add3",
+"opcode": 55184,
+"ops": [
+[
+"At",
+"Ab",
+2
+],
+[
+"At",
+"Ab",
+0
+]
+],
+"except": []
+},
+{
+"name": "sqr_sqr_add3",
+"opcode": 19200,
+"ops": [
+[
+"At",
+"ArRn2",
+4
+],
+[
+"At",
+"ArStep2",
+2
+],
+[
+"At",
+"Ab",
+0
+]
+],
+"except": []
+},
+{
+"name": "sqr_mpysu_add3a",
+"opcode": 18884,
+"ops": [
+[
+"At",
+"Ab",
+4
+],
+[
+"At",
+"Ab",
+0
+]
+],
+"except": []
+},
+{
+"name": "cmp",
+"opcode": 19852,
+"ops": [
+[
+"At",
+"Ax",
+1
+],
+[
+"At",
+"Bx",
+0
+]
+],
+"except": []
+},
+{
+"name": "cmp_b0_b1",
+"opcode": 54403,
+"ops": [],
+"except": []
+},
+{
+"name": "cmp_b1_b0",
+"opcode": 54659,
+"ops": [],
+"except": []
+},
+{
+"name": "cmp",
+"opcode": 55962,
+"ops": [
+[
+"At",
+"Bx",
+10
+],
+[
+"At",
+"Ax",
+0
+]
+],
+"except": []
+},
+{
+"name": "cmp_p1_to",
+"opcode": 35683,
+"ops": [
+[
+"At",
+"Ax",
+4
+]
+],
+"except": []
+},
+{
+"name": "max2_vtr",
+"opcode": 24097,
+"ops": [
+[
+"At",
+"Ax",
+8
+]
+],
+"except": []
+},
+{
+"name": "min2_vtr",
+"opcode": 17346,
+"ops": [
+[
+"At",
+"Ax",
+0
+]
+],
+"except": []
+},
+{
+"name": "max2_vtr",
+"opcode": 55172,
+"ops": [
+[
+"At",
+"Ax",
+1
+],
+[
+"At",
+"Bx",
+0
+]
+],
+"except": []
+},
+{
+"name": "min2_vtr",
+"opcode": 54458,
+"ops": [
+[
+"At",
+"Ax",
+8
+],
+[
+"At",
+"Bx",
+0
+]
+],
+"except": []
+},
+{
+"name": "max2_vtr_movl",
+"opcode": 19008,
+"ops": [
+[
+"At",
+"Ax",
+3
+],
+[
+"At",
+"Bx",
+4
+],
+[
+"At",
+"ArRn1",
+1
+],
+[
+"At",
+"ArStep1",
+0
+]
+],
+"except": []
+},
+{
+"name": "max2_vtr_movh",
+"opcode": 19012,
+"ops": [
+[
+"At",
+"Ax",
+3
+],
+[
+"At",
+"Bx",
+4
+],
+[
+"At",
+"ArRn1",
+1
+],
+[
+"At",
+"ArStep1",
+0
+]
+],
+"except": []
+},
+{
+"name": "max2_vtr_movl",
+"opcode": 19040,
+"ops": [
+[
+"At",
+"Bx",
+4
+],
+[
+"At",
+"Ax",
+3
+],
+[
+"At",
+"ArRn1",
+1
+],
+[
+"At",
+"ArStep1",
+0
+]
+],
+"except": []
+},
+{
+"name": "max2_vtr_movh",
+"opcode": 19044,
+"ops": [
+[
+"At",
+"Bx",
+4
+],
+[
+"At",
+"Ax",
+3
+],
+[
+"At",
+"ArRn1",
+1
+],
+[
+"At",
+"ArStep1",
+0
+]
+],
+"except": []
+},
+{
+"name": "min2_vtr_movl",
+"opcode": 18944,
+"ops": [
+[
+"At",
+"Ax",
+3
+],
+[
+"At",
+"Bx",
+4
+],
+[
+"At",
+"ArRn1",
+1
+],
+[
+"At",
+"ArStep1",
+0
+]
+],
+"except": []
+},
+{
+"name": "min2_vtr_movh",
+"opcode": 18948,
+"ops": [
+[
+"At",
+"Ax",
+3
+],
+[
+"At",
+"Bx",
+4
+],
+[
+"At",
+"ArRn1",
+1
+],
+[
+"At",
+"ArStep1",
+0
+]
+],
+"except": []
+},
+{
+"name": "min2_vtr_movl",
+"opcode": 18976,
+"ops": [
+[
+"At",
+"Bx",
+4
+],
+[
+"At",
+"Ax",
+3
+],
+[
+"At",
+"ArRn1",
+1
+],
+[
+"At",
+"ArStep1",
+0
+]
+],
+"except": []
+},
+{
+"name": "min2_vtr_movh",
+"opcode": 18980,
+"ops": [
+[
+"At",
+"Bx",
+4
+],
+[
+"At",
+"Ax",
+3
+],
+[
+"At",
+"ArRn1",
+1
+],
+[
+"At",
+"ArStep1",
+0
+]
+],
+"except": []
+},
+{
+"name": "max2_vtr_movij",
+"opcode": 54672,
+"ops": [
+[
+"At",
+"Ax",
+6
+],
+[
+"At",
+"Bx",
+5
+],
+[
+"At",
+"ArpRn1",
+2
+],
+[
+"At",
+"ArpStep1",
+0
+],
+[
+"At",
+"ArpStep1",
+1
+]
+],
+"except": []
+},
+{
+"name": "max2_vtr_movji",
+"opcode": 17824,
+"ops": [
+[
+"At",
+"Ax",
+4
+],
+[
+"At",
+"Bx",
+3
+],
+[
+"At",
+"ArpRn1",
+2
+],
+[
+"At",
+"ArpStep1",
+0
+],
+[
+"At",
+"ArpStep1",
+1
+]
+],
+"except": []
+},
+{
+"name": "min2_vtr_movij",
+"opcode": 53944,
+"ops": [
+[
+"At",
+"Ax",
+11
+],
+[
+"At",
+"Bx",
+10
+],
+[
+"At",
+"ArpRn1",
+2
+],
+[
+"At",
+"ArpStep1",
+0
+],
+[
+"At",
+"ArpStep1",
+1
+]
+],
+"except": []
+},
+{
+"name": "min2_vtr_movji",
+"opcode": 17888,
+"ops": [
+[
+"At",
+"Ax",
+4
+],
+[
+"At",
+"Bx",
+3
+],
+[
+"At",
+"ArpRn1",
+2
+],
+[
+"At",
+"ArpStep1",
+0
+],
+[
+"At",
+"ArpStep1",
+1
+]
+],
+"except": []
+},
+{
+"name": "mov_sv_app",
+"opcode": 19264,
+"ops": [
+[
+"At",
+"ArRn1",
+3
+],
+[
+"At",
+"ArStep1",
+2
+],
+[
+"At",
+"Bx",
+0
+],
+[
+"Cn",
+"BSv"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mov_sv_app",
+"opcode": 39264,
+"ops": [
+[
+"At",
+"ArRn1",
+4
+],
+[
+"At",
+"ArStep1Alt",
+3
+],
+[
+"At",
+"Bx",
+2
+],
+[
+"Cn",
+"BSv"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mov_sv_app",
+"opcode": 19266,
+"ops": [
+[
+"At",
+"ArRn1",
+3
+],
+[
+"At",
+"ArStep1",
+2
+],
+[
+"At",
+"Bx",
+0
+],
+[
+"Cn",
+"BSr"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mov_sv_app",
+"opcode": 39392,
+"ops": [
+[
+"At",
+"ArRn1",
+4
+],
+[
+"At",
+"ArStep1Alt",
+3
+],
+[
+"At",
+"Bx",
+2
+],
+[
+"Cn",
+"BSr"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mov_sv_app",
+"opcode": 24396,
+"ops": [
+[
+"At",
+"ArRn1",
+1
+],
+[
+"At",
+"ArStep1",
+0
+],
+[
+"Const",
+"Bx",
+0
+],
+[
+"Cn",
+"BSv"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mov_sv_app",
+"opcode": 34931,
+"ops": [
+[
+"At",
+"ArRn1",
+8
+],
+[
+"At",
+"ArStep1",
+3
+],
+[
+"Const",
+"Bx",
+1
+],
+[
+"Cn",
+"BSv"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mov_sv_app",
+"opcode": 39008,
+"ops": [
+[
+"At",
+"ArRn1",
+4
+],
+[
+"At",
+"ArStep1Alt",
+3
+],
+[
+"At",
+"Bx",
+2
+],
+[
+"Cn",
+"BSv"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mov_sv_app",
+"opcode": 56988,
+"ops": [
+[
+"At",
+"ArRn1",
+1
+],
+[
+"At",
+"ArStep1",
+0
+],
+[
+"Const",
+"Bx",
+0
+],
+[
+"Cn",
+"BSr"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mov_sv_app",
+"opcode": 54452,
+"ops": [
+[
+"At",
+"ArRn1",
+1
+],
+[
+"At",
+"ArStep1",
+0
+],
+[
+"Const",
+"Bx",
+1
+],
+[
+"Cn",
+"BSr"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mov_sv_app",
+"opcode": 39136,
+"ops": [
+[
+"At",
+"ArRn1",
+4
+],
+[
+"At",
+"ArStep1Alt",
+3
+],
+[
+"At",
+"Bx",
+2
+],
+[
+"Cn",
+"BSr"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "cbs",
+"opcode": 36968,
+"ops": [
+[
+"At",
+"Axh",
+0
+],
+[
+"At",
+"CbsCond",
+8
+]
+],
+"except": []
+},
+{
+"name": "cbs",
+"opcode": 54430,
+"ops": [
+[
+"At",
+"Axh",
+8
+],
+[
+"At",
+"Bxh",
+5
+],
+[
+"At",
+"CbsCond",
+0
+]
+],
+"except": []
+},
+{
+"name": "cbs",
+"opcode": 54720,
+"ops": [
+[
+"At",
+"ArpRn1",
+2
+],
+[
+"At",
+"ArpStep1",
+0
+],
+[
+"At",
+"ArpStep1",
+1
+],
+[
+"At",
+"CbsCond",
+3
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 19848,
+"ops": [
+[
+"AtNamed",
+"Ax",
+1
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BZr"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 54429,
+"ops": [
+[
+"AtNamed",
+"Bx",
+5
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BZr"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 24100,
+"ops": [
+[
+"AtNamed",
+"Ab",
+0
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BZr"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 32865,
+"ops": [
+[
+"AtNamed",
+"Ab",
+8
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 32881,
+"ops": [
+[
+"AtNamed",
+"Ab",
+8
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PA"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 33889,
+"ops": [
+[
+"AtNamed",
+"Ab",
+8
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 33905,
+"ops": [
+[
+"AtNamed",
+"Ab",
+8
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PA"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 54404,
+"ops": [
+[
+"AtNamed",
+"Ab",
+0
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PA"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PA"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 54432,
+"ops": [
+[
+"AtNamed",
+"Ab",
+0
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 19849,
+"ops": [
+[
+"AtNamed",
+"Ax",
+1
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"UY"
+],
+[
+"Cn",
+"BZr"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 54685,
+"ops": [
+[
+"AtNamed",
+"Bx",
+5
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"UY"
+],
+[
+"Cn",
+"BZr"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 24356,
+"ops": [
+[
+"AtNamed",
+"Ab",
+0
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"UY"
+],
+[
+"Cn",
+"BZr"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 32873,
+"ops": [
+[
+"AtNamed",
+"Ab",
+8
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"UY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 32889,
+"ops": [
+[
+"AtNamed",
+"Ab",
+8
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"UY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PA"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 33897,
+"ops": [
+[
+"AtNamed",
+"Ab",
+8
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"UY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 33913,
+"ops": [
+[
+"AtNamed",
+"Ab",
+8
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"UY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PA"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 54660,
+"ops": [
+[
+"AtNamed",
+"Ab",
+0
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"UY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PA"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PA"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 54688,
+"ops": [
+[
+"AtNamed",
+"Ab",
+0
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"UY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 51712,
+"ops": [
+[
+"At",
+"ArpRn1",
+5
+],
+[
+"At",
+"ArpStep1",
+3
+],
+[
+"At",
+"ArpStep1",
+4
+],
+[
+"Cn",
+"EMod"
+],
+[
+"Cn",
+"EMod"
+],
+[
+"AtNamed",
+"Ab",
+6
+],
+[
+"Cn",
+"UX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"UX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PA"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 51713,
+"ops": [
+[
+"At",
+"ArpRn1",
+5
+],
+[
+"At",
+"ArpStep1",
+3
+],
+[
+"At",
+"ArpStep1",
+4
+],
+[
+"Cn",
+"EMod"
+],
+[
+"Cn",
+"EMod"
+],
+[
+"AtNamed",
+"Ab",
+6
+],
+[
+"Cn",
+"UX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"UY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PA"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 51714,
+"ops": [
+[
+"At",
+"ArpRn1",
+5
+],
+[
+"At",
+"ArpStep1",
+3
+],
+[
+"At",
+"ArpStep1",
+4
+],
+[
+"Cn",
+"EMod"
+],
+[
+"Cn",
+"EMod"
+],
+[
+"AtNamed",
+"Ab",
+6
+],
+[
+"Cn",
+"UX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"UX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PA"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PA"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 51715,
+"ops": [
+[
+"At",
+"ArpRn1",
+5
+],
+[
+"At",
+"ArpStep1",
+3
+],
+[
+"At",
+"ArpStep1",
+4
+],
+[
+"Cn",
+"EMod"
+],
+[
+"Cn",
+"EMod"
+],
+[
+"AtNamed",
+"Ab",
+6
+],
+[
+"Cn",
+"UX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"UY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PA"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PA"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 51716,
+"ops": [
+[
+"At",
+"ArpRn1",
+5
+],
+[
+"At",
+"ArpStep1",
+3
+],
+[
+"At",
+"ArpStep1",
+4
+],
+[
+"Cn",
+"EMod"
+],
+[
+"Cn",
+"EMod"
+],
+[
+"AtNamed",
+"Ab",
+6
+],
+[
+"Cn",
+"UX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"UX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PA"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 51717,
+"ops": [
+[
+"At",
+"ArpRn1",
+5
+],
+[
+"At",
+"ArpStep1",
+3
+],
+[
+"At",
+"ArpStep1",
+4
+],
+[
+"Cn",
+"EMod"
+],
+[
+"Cn",
+"EMod"
+],
+[
+"AtNamed",
+"Ab",
+6
+],
+[
+"Cn",
+"UX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"UY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PA"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 51718,
+"ops": [
+[
+"At",
+"ArpRn1",
+5
+],
+[
+"At",
+"ArpStep1",
+3
+],
+[
+"At",
+"ArpStep1",
+4
+],
+[
+"Cn",
+"EMod"
+],
+[
+"Cn",
+"EMod"
+],
+[
+"AtNamed",
+"Ab",
+6
+],
+[
+"Cn",
+"UX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"UX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PA"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PA"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 51719,
+"ops": [
+[
+"At",
+"ArpRn1",
+5
+],
+[
+"At",
+"ArpStep1",
+3
+],
+[
+"At",
+"ArpStep1",
+4
+],
+[
+"Cn",
+"EMod"
+],
+[
+"Cn",
+"EMod"
+],
+[
+"AtNamed",
+"Ab",
+6
+],
+[
+"Cn",
+"UX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"UY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PA"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PA"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 51968,
+"ops": [
+[
+"At",
+"ArpRn1",
+5
+],
+[
+"At",
+"ArpStep1",
+3
+],
+[
+"At",
+"ArpStep1",
+4
+],
+[
+"Cn",
+"EMod"
+],
+[
+"Cn",
+"EMod"
+],
+[
+"AtNamed",
+"Ab",
+6
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"UX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 51969,
+"ops": [
+[
+"At",
+"ArpRn1",
+5
+],
+[
+"At",
+"ArpStep1",
+3
+],
+[
+"At",
+"ArpStep1",
+4
+],
+[
+"Cn",
+"EMod"
+],
+[
+"Cn",
+"EMod"
+],
+[
+"AtNamed",
+"Ab",
+6
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"UY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 51970,
+"ops": [
+[
+"At",
+"ArpRn1",
+5
+],
+[
+"At",
+"ArpStep1",
+3
+],
+[
+"At",
+"ArpStep1",
+4
+],
+[
+"Cn",
+"EMod"
+],
+[
+"Cn",
+"EMod"
+],
+[
+"AtNamed",
+"Ab",
+6
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"UX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PA"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 51971,
+"ops": [
+[
+"At",
+"ArpRn1",
+5
+],
+[
+"At",
+"ArpStep1",
+3
+],
+[
+"At",
+"ArpStep1",
+4
+],
+[
+"Cn",
+"EMod"
+],
+[
+"Cn",
+"EMod"
+],
+[
+"AtNamed",
+"Ab",
+6
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"UY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PA"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 51972,
+"ops": [
+[
+"At",
+"ArpRn1",
+5
+],
+[
+"At",
+"ArpStep1",
+3
+],
+[
+"At",
+"ArpStep1",
+4
+],
+[
+"Cn",
+"EMod"
+],
+[
+"Cn",
+"EMod"
+],
+[
+"AtNamed",
+"Ab",
+6
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"UX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 51973,
+"ops": [
+[
+"At",
+"ArpRn1",
+5
+],
+[
+"At",
+"ArpStep1",
+3
+],
+[
+"At",
+"ArpStep1",
+4
+],
+[
+"Cn",
+"EMod"
+],
+[
+"Cn",
+"EMod"
+],
+[
+"AtNamed",
+"Ab",
+6
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"UY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 51974,
+"ops": [
+[
+"At",
+"ArpRn1",
+5
+],
+[
+"At",
+"ArpStep1",
+3
+],
+[
+"At",
+"ArpStep1",
+4
+],
+[
+"Cn",
+"EMod"
+],
+[
+"Cn",
+"EMod"
+],
+[
+"AtNamed",
+"Ab",
+6
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"UX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PA"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 51975,
+"ops": [
+[
+"At",
+"ArpRn1",
+5
+],
+[
+"At",
+"ArpStep1",
+3
+],
+[
+"At",
+"ArpStep1",
+4
+],
+[
+"Cn",
+"EMod"
+],
+[
+"Cn",
+"EMod"
+],
+[
+"AtNamed",
+"Ab",
+6
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"UY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PA"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 3376,
+"ops": [
+[
+"At",
+"ArpRn1",
+3
+],
+[
+"At",
+"ArpStep1",
+1
+],
+[
+"At",
+"ArpStep1",
+2
+],
+[
+"Cn",
+"EMod"
+],
+[
+"Cn",
+"DMod"
+],
+[
+"AtNamed",
+"Ax",
+0
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"UY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PA"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 3360,
+"ops": [
+[
+"At",
+"ArpRn1",
+3
+],
+[
+"At",
+"ArpStep1",
+1
+],
+[
+"At",
+"ArpStep1",
+2
+],
+[
+"Cn",
+"DMod"
+],
+[
+"Cn",
+"EMod"
+],
+[
+"AtNamed",
+"Ax",
+0
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"UY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PA"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 19280,
+"ops": [
+[
+"At",
+"ArpRn1",
+3
+],
+[
+"At",
+"ArpStep1",
+1
+],
+[
+"At",
+"ArpStep1",
+2
+],
+[
+"Cn",
+"DMod"
+],
+[
+"Cn",
+"DMod"
+],
+[
+"AtNamed",
+"Ax",
+0
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"UY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PA"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 39009,
+"ops": [
+[
+"At",
+"ArpRn1",
+4
+],
+[
+"At",
+"ArpStep1",
+2
+],
+[
+"At",
+"ArpStep1",
+3
+],
+[
+"Cn",
+"EMod"
+],
+[
+"Cn",
+"DMod"
+],
+[
+"AtNamed",
+"Ax",
+8
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 39010,
+"ops": [
+[
+"At",
+"ArpRn1",
+4
+],
+[
+"At",
+"ArpStep1",
+2
+],
+[
+"At",
+"ArpStep1",
+3
+],
+[
+"Cn",
+"DMod"
+],
+[
+"Cn",
+"EMod"
+],
+[
+"AtNamed",
+"Ax",
+8
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 39011,
+"ops": [
+[
+"At",
+"ArpRn1",
+4
+],
+[
+"At",
+"ArpStep1",
+2
+],
+[
+"At",
+"ArpStep1",
+3
+],
+[
+"Cn",
+"DMod"
+],
+[
+"Cn",
+"DMod"
+],
+[
+"AtNamed",
+"Ax",
+8
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 39137,
+"ops": [
+[
+"At",
+"ArpRn1",
+4
+],
+[
+"At",
+"ArpStep1",
+2
+],
+[
+"At",
+"ArpStep1",
+3
+],
+[
+"Cn",
+"EMod"
+],
+[
+"Cn",
+"DMod"
+],
+[
+"AtNamed",
+"Ax",
+8
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PA"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 39138,
+"ops": [
+[
+"At",
+"ArpRn1",
+4
+],
+[
+"At",
+"ArpStep1",
+2
+],
+[
+"At",
+"ArpStep1",
+3
+],
+[
+"Cn",
+"DMod"
+],
+[
+"Cn",
+"EMod"
+],
+[
+"AtNamed",
+"Ax",
+8
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PA"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 39139,
+"ops": [
+[
+"At",
+"ArpRn1",
+4
+],
+[
+"At",
+"ArpStep1",
+2
+],
+[
+"At",
+"ArpStep1",
+3
+],
+[
+"Cn",
+"DMod"
+],
+[
+"Cn",
+"DMod"
+],
+[
+"AtNamed",
+"Ax",
+8
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PA"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 32968,
+"ops": [
+[
+"At",
+"ArpRn1",
+2
+],
+[
+"At",
+"ArpStep1",
+0
+],
+[
+"At",
+"ArpStep1",
+1
+],
+[
+"Cn",
+"EMod"
+],
+[
+"Cn",
+"EMod"
+],
+[
+"AtNamed",
+"Ab",
+10
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 33224,
+"ops": [
+[
+"At",
+"ArpRn1",
+2
+],
+[
+"At",
+"ArpStep1",
+0
+],
+[
+"At",
+"ArpStep1",
+1
+],
+[
+"Cn",
+"EMod"
+],
+[
+"Cn",
+"EMod"
+],
+[
+"AtNamed",
+"Ab",
+10
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PA"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 33480,
+"ops": [
+[
+"At",
+"ArpRn1",
+2
+],
+[
+"At",
+"ArpStep1",
+0
+],
+[
+"At",
+"ArpStep1",
+1
+],
+[
+"Cn",
+"EMod"
+],
+[
+"Cn",
+"EMod"
+],
+[
+"AtNamed",
+"Ab",
+10
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BZr"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 33736,
+"ops": [
+[
+"At",
+"ArpRn1",
+2
+],
+[
+"At",
+"ArpStep1",
+0
+],
+[
+"At",
+"ArpStep1",
+1
+],
+[
+"Cn",
+"EMod"
+],
+[
+"Cn",
+"EMod"
+],
+[
+"AtNamed",
+"Ab",
+10
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BZr"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PA"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 32962,
+"ops": [
+[
+"At",
+"ArpRn1",
+0
+],
+[
+"At",
+"ArpStep1",
+8
+],
+[
+"At",
+"ArpStep1",
+9
+],
+[
+"Cn",
+"EMod"
+],
+[
+"Cn",
+"EMod"
+],
+[
+"AtNamed",
+"Ab",
+10
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PA"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 18888,
+"ops": [
+[
+"At",
+"ArpRn1",
+2
+],
+[
+"At",
+"ArpStep1",
+0
+],
+[
+"At",
+"ArpStep1",
+1
+],
+[
+"Cn",
+"EMod"
+],
+[
+"Cn",
+"EMod"
+],
+[
+"AtNamed",
+"Ab",
+4
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PA"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 192,
+"ops": [
+[
+"At",
+"ArpRn1",
+3
+],
+[
+"At",
+"ArpStep1",
+1
+],
+[
+"At",
+"ArpStep1",
+2
+],
+[
+"Cn",
+"EMod"
+],
+[
+"Cn",
+"EMod"
+],
+[
+"AtNamed",
+"Ab",
+4
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BZr"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 193,
+"ops": [
+[
+"At",
+"ArpRn1",
+3
+],
+[
+"At",
+"ArpStep1",
+1
+],
+[
+"At",
+"ArpStep1",
+2
+],
+[
+"Cn",
+"EMod"
+],
+[
+"Cn",
+"EMod"
+],
+[
+"AtNamed",
+"Ab",
+4
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BZr"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PA"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 55200,
+"ops": [
+[
+"At",
+"ArpRn1",
+3
+],
+[
+"At",
+"ArpStep1",
+1
+],
+[
+"At",
+"ArpStep1",
+2
+],
+[
+"Cn",
+"EMod"
+],
+[
+"Cn",
+"EMod"
+],
+[
+"AtNamed",
+"Ax",
+4
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BSv"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 55201,
+"ops": [
+[
+"At",
+"ArpRn1",
+3
+],
+[
+"At",
+"ArpStep1",
+1
+],
+[
+"At",
+"ArpStep1",
+2
+],
+[
+"Cn",
+"EMod"
+],
+[
+"Cn",
+"EMod"
+],
+[
+"AtNamed",
+"Ax",
+4
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BSr"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 51200,
+"ops": [
+[
+"At",
+"ArpRn2",
+4
+],
+[
+"At",
+"ArpStep2",
+0
+],
+[
+"At",
+"ArpStep2",
+2
+],
+[
+"Cn",
+"EMod"
+],
+[
+"Cn",
+"EMod"
+],
+[
+"AtNamed",
+"Ab",
+6
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mma",
+"opcode": 51456,
+"ops": [
+[
+"At",
+"ArpRn2",
+4
+],
+[
+"At",
+"ArpStep2",
+0
+],
+[
+"At",
+"ArpStep2",
+2
+],
+[
+"Cn",
+"EMod"
+],
+[
+"Cn",
+"EMod"
+],
+[
+"AtNamed",
+"Ab",
+6
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mma_mx_xy",
+"opcode": 54752,
+"ops": [
+[
+"At",
+"ArRn1",
+1
+],
+[
+"At",
+"ArStep1",
+0
+],
+[
+"AtNamed",
+"Ax",
+3
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mma_mx_xy",
+"opcode": 54756,
+"ops": [
+[
+"At",
+"ArRn1",
+1
+],
+[
+"At",
+"ArStep1",
+0
+],
+[
+"AtNamed",
+"Ax",
+3
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mma_xy_mx",
+"opcode": 34914,
+"ops": [
+[
+"At",
+"ArRn1",
+4
+],
+[
+"At",
+"ArStep1",
+3
+],
+[
+"AtNamed",
+"Ax",
+8
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mma_xy_mx",
+"opcode": 35426,
+"ops": [
+[
+"At",
+"ArRn1",
+4
+],
+[
+"At",
+"ArStep1",
+3
+],
+[
+"AtNamed",
+"Ax",
+8
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mma_my_my",
+"opcode": 19872,
+"ops": [
+[
+"At",
+"ArRn1",
+3
+],
+[
+"At",
+"ArStep1",
+2
+],
+[
+"AtNamed",
+"Ax",
+4
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"UY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mma_my_my",
+"opcode": 19873,
+"ops": [
+[
+"At",
+"ArRn1",
+3
+],
+[
+"At",
+"ArStep1",
+2
+],
+[
+"AtNamed",
+"Ax",
+4
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"UY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PA"
+]
+],
+"except": []
+},
+{
+"name": "mma_my_my",
+"opcode": 19874,
+"ops": [
+[
+"At",
+"ArRn1",
+3
+],
+[
+"At",
+"ArStep1",
+2
+],
+[
+"AtNamed",
+"Ax",
+4
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"UY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mma_my_my",
+"opcode": 19875,
+"ops": [
+[
+"At",
+"ArRn1",
+3
+],
+[
+"At",
+"ArStep1",
+2
+],
+[
+"AtNamed",
+"Ax",
+4
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"UY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PA"
+]
+],
+"except": []
+},
+{
+"name": "mma_my_my",
+"opcode": 38112,
+"ops": [
+[
+"At",
+"ArRn1",
+4
+],
+[
+"At",
+"ArStep1",
+3
+],
+[
+"AtNamed",
+"Ax",
+8
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mma_my_my",
+"opcode": 38113,
+"ops": [
+[
+"At",
+"ArRn1",
+4
+],
+[
+"At",
+"ArStep1",
+3
+],
+[
+"AtNamed",
+"Ax",
+8
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"UX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mma_my_my",
+"opcode": 38114,
+"ops": [
+[
+"At",
+"ArRn1",
+4
+],
+[
+"At",
+"ArStep1",
+3
+],
+[
+"AtNamed",
+"Ax",
+8
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PA"
+]
+],
+"except": []
+},
+{
+"name": "mma_my_my",
+"opcode": 38115,
+"ops": [
+[
+"At",
+"ArRn1",
+4
+],
+[
+"At",
+"ArStep1",
+3
+],
+[
+"AtNamed",
+"Ax",
+8
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"UX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PA"
+]
+],
+"except": []
+},
+{
+"name": "mma_my_my",
+"opcode": 38116,
+"ops": [
+[
+"At",
+"ArRn1",
+4
+],
+[
+"At",
+"ArStep1",
+3
+],
+[
+"AtNamed",
+"Ax",
+8
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mma_my_my",
+"opcode": 38117,
+"ops": [
+[
+"At",
+"ArRn1",
+4
+],
+[
+"At",
+"ArStep1",
+3
+],
+[
+"AtNamed",
+"Ax",
+8
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"UX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mma_my_my",
+"opcode": 38118,
+"ops": [
+[
+"At",
+"ArRn1",
+4
+],
+[
+"At",
+"ArStep1",
+3
+],
+[
+"AtNamed",
+"Ax",
+8
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PA"
+]
+],
+"except": []
+},
+{
+"name": "mma_my_my",
+"opcode": 38119,
+"ops": [
+[
+"At",
+"ArRn1",
+4
+],
+[
+"At",
+"ArStep1",
+3
+],
+[
+"AtNamed",
+"Ax",
+8
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"UX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PA"
+]
+],
+"except": []
+},
+{
+"name": "mma_mov",
+"opcode": 20384,
+"ops": [
+[
+"At",
+"Axh",
+6
+],
+[
+"At",
+"Bxh",
+2
+],
+[
+"At",
+"ArRn1",
+1
+],
+[
+"At",
+"ArStep1",
+0
+],
+[
+"AtNamed",
+"Ab",
+3
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mma_mov",
+"opcode": 54176,
+"ops": [
+[
+"At",
+"Axh",
+6
+],
+[
+"At",
+"Bxh",
+2
+],
+[
+"At",
+"ArRn1",
+1
+],
+[
+"At",
+"ArStep1",
+0
+],
+[
+"AtNamed",
+"Ab",
+3
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BAc"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mma_mov",
+"opcode": 32976,
+"ops": [
+[
+"At",
+"Axh",
+9
+],
+[
+"At",
+"Bxh",
+8
+],
+[
+"At",
+"ArRn1",
+3
+],
+[
+"At",
+"ArStep1",
+2
+],
+[
+"AtNamed",
+"Ax",
+10
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BSv"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mma_mov",
+"opcode": 32977,
+"ops": [
+[
+"At",
+"Axh",
+9
+],
+[
+"At",
+"Bxh",
+8
+],
+[
+"At",
+"ArRn1",
+3
+],
+[
+"At",
+"ArStep1",
+2
+],
+[
+"AtNamed",
+"Ax",
+10
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BSr"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mma_mov",
+"opcode": 32978,
+"ops": [
+[
+"At",
+"Axh",
+9
+],
+[
+"At",
+"Bxh",
+8
+],
+[
+"At",
+"ArRn1",
+3
+],
+[
+"At",
+"ArStep1",
+2
+],
+[
+"AtNamed",
+"Ax",
+10
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BSv"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mma_mov",
+"opcode": 32979,
+"ops": [
+[
+"At",
+"Axh",
+9
+],
+[
+"At",
+"Bxh",
+8
+],
+[
+"At",
+"ArRn1",
+3
+],
+[
+"At",
+"ArStep1",
+2
+],
+[
+"AtNamed",
+"Ax",
+10
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BSr"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mma_mov",
+"opcode": 22552,
+"ops": [
+[
+"At",
+"ArRn2",
+7
+],
+[
+"At",
+"ArStep1",
+6
+],
+[
+"AtNamed",
+"Ax",
+0
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BSv"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "mma_mov",
+"opcode": 22584,
+"ops": [
+[
+"At",
+"ArRn2",
+7
+],
+[
+"At",
+"ArStep1",
+6
+],
+[
+"AtNamed",
+"Ax",
+0
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"SX"
+],
+[
+"Cn",
+"SY"
+],
+[
+"Cn",
+"BSr"
+],
+[
+"Cn",
+"Add"
+],
+[
+"Cn",
+"PP"
+],
+[
+"Cn",
+"Sub"
+],
+[
+"Cn",
+"PP"
+]
+],
+"except": []
+},
+{
+"name": "addhp",
+"opcode": 37088,
+"ops": [
+[
+"At",
+"ArRn2",
+2
+],
+[
+"At",
+"ArStep2",
+0
+],
+[
+"At",
+"Px",
+4
+],
+[
+"At",
+"Ax",
+8
+]
+],
+"except": []
+}
+]
